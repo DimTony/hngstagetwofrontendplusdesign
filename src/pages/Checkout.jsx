@@ -3,6 +3,8 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import { TextTemplate } from '../components/TextTemplate';
 import CheckoutCart from '../components/CheckoutCart';
+import Footer from '../components/Footer';
+import BaseFooter from '../components/BaseFooter';
 
 const Checkout = () => {
   return (
@@ -16,6 +18,9 @@ const Checkout = () => {
           }
         />
         <CheckoutCart />
+
+        <Footer />
+        <BaseFooter />
       </VStack>
     </>
   );
