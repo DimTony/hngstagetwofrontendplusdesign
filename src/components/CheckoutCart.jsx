@@ -5,8 +5,28 @@ import star from '../assets/one.png';
 import unstar from '../assets/Five.png';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import TrashIcon from '../assets/TrashVector.png';
+import badgeIcon from '../assets/WarnVector.png';
+import atmIcon from '../assets/AtmVector.png';
 
 const CheckoutCart = () => {
+  const totals = [
+    {
+      name: 'Subtotal',
+      amount: 'N4,000.00',
+    },
+    {
+      name: 'Delivery',
+      amount: 'N1,500.00',
+    },
+    {
+      name: 'Zip',
+      amount: 'N1,000.00',
+    },
+    {
+      name: 'Front & Back Designs',
+      amount: 'N1,000.00',
+    },
+  ];
   return (
     <>
       <HStack w="100%" justifyContent="space-between" alignItems="flex-start">
@@ -147,23 +167,118 @@ const CheckoutCart = () => {
             </HStack>
           ))}
         </VStack>
-        <VStack
-          w="487.35px"
-          bg="rgba(224, 231, 231, 0.1)"
-          borderRadius="8px"
-          border="0.5px solid rgba(224, 231, 231, 1)"
-          alignItems="flex-start"
-          p="32px 16px 32px 16px"
-        >
-          <Text
-            fontWeight="700"
-            fontSize="24px"
-            lineHeight="28.8px"
-            letterSpacing="-0.01em"
-            color="rgba(78, 80, 80, 1)"
+        <VStack w="487.35px">
+          <VStack
+            w="100%"
+            bg="rgba(224, 231, 231, 0.1)"
+            borderRadius="8px"
+            border="0.5px solid rgba(224, 231, 231, 1)"
+            alignItems="flex-start"
+            p="32px 32px 32px 32px"
           >
-            Order Summary
-          </Text>
+            <Text
+              mb="2rem"
+              fontWeight="700"
+              fontSize="24px"
+              lineHeight="28.8px"
+              letterSpacing="-0.01em"
+              color="rgba(78, 80, 80, 1)"
+            >
+              Order Summary
+            </Text>
+            <VStack w="100%">
+              {totals.map((item, index) => (
+                <HStack w="100%" justifyContent="space-between" mb="2rem">
+                  <Text
+                    fontFamily="Montserrat"
+                    fontSize="18px"
+                    fontWeight="400"
+                    lineHeight="21.6px"
+                    letterSpacing="-0.01em"
+                    color="rgba(78, 80, 80, 1)"
+                  >
+                    {/* Subtotal */}
+                    {item.name}
+                  </Text>
+                  <Text
+                    fontFamily="Montserrat"
+                    fontSize="18px"
+                    fontWeight="700"
+                    lineHeight="28.8px"
+                    letterSpacing="-0.01em"
+                    color="rgba(0, 22, 22, 1)"
+                  >
+                    {/* N4,000.00 */}
+                    {item.amount}
+                  </Text>
+                </HStack>
+              ))}
+            </VStack>
+            <HStack
+              p="16px 0px 16px 0px"
+              w="100%"
+              justifyContent="space-between"
+              borderTop="0.5px solid rgba(185, 191, 191, 1)"
+              borderBottom="0.5px solid rgba(185, 191, 191, 1)"
+            >
+              <Text
+                fontWeight="700"
+                fontSize="24px"
+                lineHeight="28.8px"
+                letterSpacing="-0.01em"
+                color="rgba(0,0,0,1)"
+              >
+                Total
+              </Text>
+              <Text
+                fontFamily="Montserrat"
+                fontWeight="700"
+                fontSize="18px"
+                lineHeight="28.8px"
+                letterSpacing="-0.01em"
+                color="rgba(0,22,22,1)"
+              >
+                N7,500.00
+              </Text>
+            </HStack>
+
+            <HStack
+              mt="1rem"
+              borderRadius="8px"
+              border="0.5px solid rgba(224, 231, 231, 1)"
+              p="8px"
+              gap="4px"
+              bg="rgba(224, 231, 231, 0.3)"
+              justifyContent="flex-start"
+              alignItems="flex-start"
+            >
+              <Image src={badgeIcon} alt="badge" w="24px" h="24px" />
+              <Text noOfLines={2}>
+                Please your totebag will be delivered in three to five working
+                days.
+              </Text>
+            </HStack>
+          </VStack>
+
+          <Stack
+            p="16px 253.47px 16px 16px"
+            w="100%"
+            bg="rgba(0, 22, 22, 1)"
+            borderRadius="8.01px"
+            border="0.64px solid rgba(224, 231, 231, 1)"
+          >
+            <HStack gap="10px">
+              <Text
+                fontSize="16px"
+                fontWeight="500"
+                lineHeight="21.76px"
+                color="rgba(235, 247, 247, 1)"
+              >
+                Payment options
+              </Text>
+              <Image src={atmIcon} alt="atm" w="15.44px" h="12.01px" />
+            </HStack>
+          </Stack>
         </VStack>
       </HStack>
     </>
