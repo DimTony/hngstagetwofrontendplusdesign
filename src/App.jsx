@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductListing from './pages/ProductListing';
 import Navbar from './components/Navbar';
+import ViewCart from './pages/ViewCart';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<ProductListing />} />
+          <Route path="/cart" element={<ViewCart />} />
         </Routes>
       </Router>
     </>
