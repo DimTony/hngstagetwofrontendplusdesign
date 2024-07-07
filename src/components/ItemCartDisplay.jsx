@@ -445,7 +445,7 @@ const ItemCartDisplay = () => {
               alignItems="center"
               borderRadius="3.1px"
               border="0.39px solid rgba(224, 231, 231, 1)"
-              p="4.65px, 6.19px, 4.65px, 6.19px"
+              p="4.65px 6.19px 4.65px 6.19px"
               bg="rgba(238, 255, 255, 1)"
             >
               <Text
@@ -497,7 +497,7 @@ const ItemCartDisplay = () => {
           </HStack>
         </HStack>
 
-        <HStack gap="6px">
+        <HStack gap="6px" mb="1rem">
           {['XL', 'XXL', 'L', 'S', 'M'].map((size, index) => (
             <Button
               key={index}
@@ -508,8 +508,11 @@ const ItemCartDisplay = () => {
                   ? 'rgba(238, 255, 255, 1)'
                   : 'rgba(53, 53, 59, 1)'
               }
-              _hover={{ bg: activeButton === index ? 'blue.600' : 'gray.300' }}
-              p="5.5px, 6.75px, 5.5px, 6.75px"
+              _hover={{
+                bg:
+                  activeButton === index ? 'rgba(0, 22, 22, 1)' : 'transparent',
+              }}
+              p="5.5px 6.75px 5.5px 6.75px"
               border={
                 activeButton === index
                   ? '0.25px solid rgba(0, 22, 22, 1)'
@@ -523,6 +526,49 @@ const ItemCartDisplay = () => {
               {size}
             </Button>
           ))}
+        </HStack>
+
+        <HStack
+          borderRadius="4px"
+          border="0.5px solid rgba(224, 231, 231, 1)"
+          bg="rgba(224, 231, 231, 1)"
+          gap="12px"
+          p="8px"
+          w="100%"
+          justifyContent="space-between"
+          mb="1rem"
+        >
+          {['Zip', 'Button', 'Zip or Button', 'None'].map((option) => (
+            <HStack>
+              <Image src={TickIcon} alt="tick" w="16px" h="16px" />
+              <Text
+                fontSize="14px"
+                lineHeight="16.8px"
+                fontWeight="400"
+                color="rgba(17, 18, 18,1)"
+              >
+                {option}
+              </Text>
+            </HStack>
+          ))}
+        </HStack>
+
+        <HStack
+          borderRadius="8px"
+          border="0.5px solid rgba(224, 231, 231, 1)"
+          gap="12px"
+          boxShadow="-4px 4px 4px 0px rgba(0,0,0,0.08)"
+          p="12px"
+        >
+          <Image src={DeliveryIcon} alt="del" w="24px" h="24px" />
+          <Text
+            fontSize="16px"
+            lineHeight="21.76px"
+            letterSpacing="-0.01em"
+            color="rgba(0,0,0,1)"
+          >
+            Delivery is not free-of-charge
+          </Text>
         </HStack>
       </VStack>
     </>
