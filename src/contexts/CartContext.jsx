@@ -38,6 +38,17 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
   };
 
+  const handleItemAddRemove = (item) => {
+    addItemToCart(item);
+  };
+
+  const isInCart = (productId) => {
+    cartItems.some((item) => item.id === productId);
+  };
+  const formatAmount = (amount) => {
+    return `N${amount.toLocaleString()}`;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -45,6 +56,9 @@ export const CartProvider = ({ children }) => {
         addItemToCart,
         removeItemFromCart,
         clearCart,
+        handleItemAddRemove,
+        isInCart,
+        formatAmount,
       }}
     >
       {children}

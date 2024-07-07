@@ -30,6 +30,14 @@ import item29 from './card004.png';
 import item30 from './card001.png';
 import item31 from './card003.png';
 import item32 from './card004.png';
+import item33 from './card6.png';
+import item34 from './card001.png';
+import item35 from './card002.png';
+import item36 from './cardd003.png';
+import item37 from './card004.png';
+import item38 from './card001.png';
+import item39 from './card003.png';
+import item40 from './card004.png';
 
 export const products = [
   {
@@ -253,6 +261,62 @@ export const products = [
     id: 32,
     image: item32,
     name: 'Black Chinos',
+    seller: 'by thetotebagshop',
+    amount: 4000,
+  },
+  {
+    id: 33,
+    image: item26,
+    name: 'Chinos',
+    seller: '',
+    amount: 5000,
+  },
+  {
+    id: 34,
+    image: item27,
+    name: 'Cotton',
+    seller: 'by thetotebagshop',
+    amount: 4000,
+  },
+  {
+    id: 35,
+    image: item28,
+    name: 'Pure Cotton',
+    seller: 'by thetotebagshop',
+    amount: 4000,
+  },
+  {
+    id: 36,
+    image: item29,
+    name: 'Black Chinos',
+    seller: 'by thetotebagshop',
+    amount: 4000,
+  },
+  {
+    id: 37,
+    image: item30,
+    name: 'Chinos',
+    seller: '',
+    amount: 5000,
+  },
+  {
+    id: 38,
+    image: item31,
+    name: 'Pure cotton',
+    seller: 'by thetotebagshop',
+    amount: 4000,
+  },
+  {
+    id: 39,
+    image: item32,
+    name: 'Black Chinos',
+    seller: 'by thetotebagshop',
+    amount: 4000,
+  },
+  {
+    id: 40,
+    image: item31,
+    name: 'Pure cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },

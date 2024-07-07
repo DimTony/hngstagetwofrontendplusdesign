@@ -22,18 +22,15 @@ import Footer from '../components/Footer';
 import BaseFooter from '../components/BaseFooter';
 
 const ProductListing = () => {
-  const { cartItems, addItemToCart, removeItemFromCart, clearCart } = useCart();
-
-  const handleItemAddRemove = (item) => {
-    addItemToCart(item);
-  };
-
-  const isInCart = (productId) =>
-    cartItems.some((item) => item.id === productId);
-
-  const formatAmount = (amount) => {
-    return `N${amount.toLocaleString()}`;
-  };
+  const {
+    cartItems,
+    addItemToCart,
+    removeItemFromCart,
+    clearCart,
+    handleItemAddRemove,
+    isInCart,
+    formatAmount,
+  } = useCart();
 
   return (
     <>

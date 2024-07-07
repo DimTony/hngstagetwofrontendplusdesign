@@ -45,6 +45,19 @@ const ProductGrid = ({
       lg: '1rem',
       xl: '1rem',
     });
+  } else if (end === 'Third') {
+    GridEnd = useBreakpointValue({
+      base: 20,
+      md: 40,
+      lg: 40,
+      xl: 40,
+    });
+    mbottom = useBreakpointValue({
+      base: '2rem',
+      md: '1rem',
+      lg: '1rem',
+      xl: '1rem',
+    });
   } else {
     GridEnd = useBreakpointValue({
       base: 20,
