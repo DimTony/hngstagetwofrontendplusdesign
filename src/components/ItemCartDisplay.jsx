@@ -23,6 +23,7 @@ import TickIcon from '../assets/TickVector.png';
 import DeliveryIcon from '../assets/delivery.png';
 import star from '../assets/one.png';
 import unstar from '../assets/Five.png';
+import badgeIcon from '../assets/WarnVector.png';
 
 const ItemCartDisplay = () => {
   const [activeButton, setActiveButton] = useState(0);
@@ -554,6 +555,7 @@ const ItemCartDisplay = () => {
         </HStack>
 
         <HStack
+          mb="1rem"
           borderRadius="8px"
           border="0.5px solid rgba(224, 231, 231, 1)"
           gap="12px"
@@ -570,6 +572,100 @@ const ItemCartDisplay = () => {
             Delivery is not free-of-charge
           </Text>
         </HStack>
+
+        <Menu>
+          <MenuButton
+            w="100%"
+            h="44px"
+            textAlign="left"
+            p="12px"
+            borderRadius="1px"
+            border="0.99px solid rgba(0, 128, 127, 1)"
+            color="rgba(224, 231, 231, 1)"
+            as={Button}
+            rightIcon={
+              <ChevronDownIcon color="rgba(0, 90, 89, 1)" w="30px" h="auto" />
+            }
+          >
+            <Text
+              fontWeight="400"
+              fontSize="14px"
+              lineHeight="19.6px"
+              color="rgba(0, 90, 89, 1)"
+            >
+              Select your location
+            </Text>
+          </MenuButton>
+          <MenuList>
+            <MenuItem onClick={() => alert('Profile clicked')}>
+              Profile
+            </MenuItem>
+            <MenuItem onClick={() => alert('Settings clicked')}>
+              Settings
+            </MenuItem>
+            <MenuItem onClick={() => alert('Logout clicked')}>Logout</MenuItem>
+          </MenuList>
+        </Menu>
+
+        <HStack
+          mt="1rem"
+          borderRadius="8px"
+          border="0.5px solid rgba(224, 231, 231, 1)"
+          p="8px"
+          gap="4px"
+          bg="rgba(224, 231, 231, 0.3)"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+        >
+          <Image src={badgeIcon} alt="badge" w="24px" h="24px" />
+          <Text noOfLines={2}>
+            The order will be delivered within 5-7 days from the day it was
+            ordered.
+          </Text>
+        </HStack>
+
+        <VStack
+          mb="1rem"
+          gap="1rem"
+          w="100%"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Button
+            w="90%"
+            h="48px"
+            variant="solid"
+            p="13px 121px 13px 121px"
+            borderRadius="4px"
+            bg="rgba(0, 22, 22, 1)"
+          >
+            <Text
+              fontSize="16px"
+              lineHeight="22.4px"
+              fontWeight="600"
+              color="rgba(250, 255, 255, 1)"
+            >
+              Buy Now
+            </Text>
+          </Button>
+          <Button
+            w="90%"
+            h="48px"
+            variant="outline"
+            p="13px 121px 13px 121px"
+            borderRadius="4px"
+            border="0.5px solid rgba(203, 199, 199, 1)"
+          >
+            <Text
+              fontSize="16px"
+              lineHeight="22.4px"
+              fontWeight="600"
+              color="rgba(0, 21, 21, 1)"
+            >
+              Add to cart
+            </Text>
+          </Button>
+        </VStack>
       </VStack>
     </>
   );

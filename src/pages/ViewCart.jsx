@@ -3,6 +3,8 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import { TextTemplate } from '../components/TextTemplate';
 import ItemCartDisplay from '../components/ItemCartDisplay';
+import CartItemDesc from '../components/CartItemDesc';
+import CustomerReview from '../components/CustomerReview';
 
 const ViewCart = () => {
   return (
@@ -14,6 +16,9 @@ const ViewCart = () => {
           xlBottom={'Review and manage the items in your shopping cart.'}
         />
         <ItemCartDisplay />
+        <CartItemDesc />
+
+        <CustomerReview />
       </VStack>
     </>
   );
