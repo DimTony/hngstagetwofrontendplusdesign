@@ -68,7 +68,7 @@ const ProductGrid = ({
           gridTemplateColumns={{
             base: 'repeat(2, 1fr)',
             md: 'repeat(3, 1fr)',
-            lg: 'repeat(3, 1fr)',
+            lg: 'repeat(4, 1fr)',
             xl: 'repeat(4, 1fr)',
           }}
           gap={{ base: '20px', md: '30px' }}
@@ -76,7 +76,7 @@ const ProductGrid = ({
           {products.slice(start, GridEnd).map((product) => (
             <VStack
               key={product.id}
-              w={{ xl: '340px', lg: '330px', md: '220px', base: '156px' }}
+              w={{ xl: '340px', lg: '230px', md: '220px', base: '156px' }}
               h="auto"
               gap="24px"
               _hover={{

@@ -1,224 +1,257 @@
+import item1 from './card001.png';
+import item2 from './card003.png';
+import item3 from './card002.png';
+import item4 from './card004.png';
+import item5 from './card5.png';
+import item6 from './cardd4.png';
+import item7 from './card7.png';
+import item8 from './card6.png';
+import item9 from './card001.png';
+import item10 from './card002.png';
+import item11 from './cardd003.png';
+import item12 from './card004.png';
+import item13 from './card001.png';
+import item14 from './card003.png';
+import item15 from './card002.png';
+import item16 from './card004.png';
+import item17 from './card5.png';
+import item18 from './cardd4.png';
+import item19 from './card7.png';
+import item20 from './card6.png';
+import item21 from './card001.png';
+import item22 from './card002.png';
+import item23 from './cardd003.png';
+import item24 from './card004.png';
+import item25 from './card6.png';
+import item26 from './card001.png';
+import item27 from './card002.png';
+import item28 from './cardd003.png';
+import item29 from './card004.png';
+import item30 from './card001.png';
+import item31 from './card003.png';
+import item32 from './card004.png';
+
 export const products = [
   {
     id: 1,
-    image: 'src/assets/card001.png',
+    image: item1,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 2,
-    image: 'src/assets/card003.png',
+    image: item2,
     name: 'Pure cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 3,
-    image: 'src/assets/card002.png',
+    image: item3,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 4,
-    image: 'src/assets/card004.png',
+    image: item4,
     name: 'Black Chinos',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 5,
-    image: 'src/assets/card5.png',
+    image: item5,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 6,
-    image: 'src/assets/cardd4.png',
+    image: item6,
     name: 'Pure cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 7,
-    image: 'src/assets/card7.png',
+    image: item7,
     name: 'Chinos & Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 8,
-    image: 'src/assets/card6.png',
+    image: item8,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 9,
-    image: 'src/assets/card001.png',
+    image: item9,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 10,
-    image: 'src/assets/card002.png',
+    image: item10,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 11,
-    image: 'src/assets/cardd003.png',
+    image: item11,
     name: 'Pure Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 12,
-    image: 'src/assets/card004.png',
+    image: item12,
     name: 'Black Chinos',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 13,
-    image: 'src/assets/card001.png',
+    image: item13,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 14,
-    image: 'src/assets/card003.png',
+    image: item14,
     name: 'Pure cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 15,
-    image: 'src/assets/card002.png',
+    image: item15,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 16,
-    image: 'src/assets/card004.png',
+    image: item16,
     name: 'Black Chinos',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 17,
-    image: 'src/assets/card5.png',
+    image: item17,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 18,
-    image: 'src/assets/cardd4.png',
+    image: item18,
     name: 'Pure cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 19,
-    image: 'src/assets/card7.png',
+    image: item19,
     name: 'Chinos & Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 20,
-    image: 'src/assets/card6.png',
+    image: item20,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 21,
-    image: 'src/assets/card001.png',
+    image: item21,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 22,
-    image: 'src/assets/card002.png',
+    image: item22,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 23,
-    image: 'src/assets/cardd003.png',
+    image: item23,
     name: 'Pure Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 24,
-    image: 'src/assets/card004.png',
+    image: item24,
     name: 'Black Chinos',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 25,
-    image: 'src/assets/card6.png',
+    image: item25,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 26,
-    image: 'src/assets/card001.png',
+    image: item26,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 27,
-    image: 'src/assets/card002.png',
+    image: item27,
     name: 'Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 28,
-    image: 'src/assets/cardd003.png',
+    image: item28,
     name: 'Pure Cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 29,
-    image: 'src/assets/card004.png',
+    image: item29,
     name: 'Black Chinos',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 30,
-    image: 'src/assets/card001.png',
+    image: item30,
     name: 'Chinos',
     seller: '',
     amount: 5000,
   },
   {
     id: 31,
-    image: 'src/assets/card003.png',
+    image: item31,
     name: 'Pure cotton',
     seller: 'by thetotebagshop',
     amount: 4000,
   },
   {
     id: 32,
-    image: 'src/assets/card004.png',
+    image: item32,
     name: 'Black Chinos',
     seller: 'by thetotebagshop',
     amount: 4000,
