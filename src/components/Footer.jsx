@@ -8,12 +8,14 @@ import {
   useBreakpointValue,
   VStack,
 } from '@chakra-ui/react';
+import GraphBg from '../assets/Graph.png';
 
 const Footer = () => {
   return (
     <>
       <VStack
-        bg="url('src/assets/Graph.png')"
+        // bg={GraphBg}
+        bgImage={`url(${GraphBg})`}
         backgroundSize="cover"
         backgroundPosition="center"
         w="100vw"
