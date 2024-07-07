@@ -2,6 +2,7 @@ import { VStack } from '@chakra-ui/react';
 import React from 'react';
 import SearchBar from '../components/SearchBar';
 import { TextTemplate } from '../components/TextTemplate';
+import CheckoutCart from '../components/CheckoutCart';
 
 const Checkout = () => {
   return (
@@ -14,6 +15,7 @@ const Checkout = () => {
             'Effortlessly manage your purchases and checkout with ease.'
           }
         />
+        <CheckoutCart />
       </VStack>
     </>
   );
