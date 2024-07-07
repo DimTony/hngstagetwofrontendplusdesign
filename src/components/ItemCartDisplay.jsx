@@ -61,7 +61,7 @@ const ItemCartDisplay = () => {
                 src={SmallDisplayItem}
                 alt="smallpic"
                 w={{ xl: '255.46px', lg: '100px', md: '90px', base: '88px' }}
-                h={{ xl: '125.46px', lg: '100px', md: '90px', base: '88px' }}
+                h={{ xl: '155.46px', lg: '100px', md: '90px', base: '88px' }}
                 border="0.5px solid rgba(223, 221, 220, 1)"
               />
               <Text
