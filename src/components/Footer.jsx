@@ -9,12 +9,14 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import GraphBg from '../assets/Graph.png';
+import tiktokIcon from '../assets/ic_sharp-tiktok.png';
+import igIcon from '../assets/fe_instagram.png';
+import copyrightIcon from '../assets/copyVector.png';
 
 const Footer = () => {
   return (
     <>
       <VStack
-        // bg={GraphBg}
         bgImage={`url(${GraphBg})`}
         backgroundSize="cover"
         backgroundPosition="center"
@@ -69,18 +71,12 @@ const Footer = () => {
             <HStack bg="transparent" gap="24px" w="96px" h="36px">
               <Image
                 bg="transparent"
-                src="src/assets/ic_sharp-tiktok.png"
+                src={tiktokIcon}
                 alt="tk"
                 w="36px"
                 h="36px"
               />
-              <Image
-                bg="transparent"
-                src="src/assets/fe_instagram.png"
-                alt="ig"
-                w="36px"
-                h="36px"
-              />
+              <Image bg="transparent" src={igIcon} alt="ig" w="36px" h="36px" />
             </HStack>
           </VStack>
           <VStack
@@ -228,7 +224,7 @@ const Footer = () => {
             >
               <Image
                 bg="transparent"
-                src="src/assets/copyVector.png"
+                src={copyrightIcon}
                 w="14px"
                 h="14px"
                 alt="copyright"
