@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react';
+import { Box, Image, VStack } from '@chakra-ui/react';
 import React from 'react';
 import SearchBar from '../components/SearchBar';
 import { TextTemplate } from '../components/TextTemplate';
@@ -9,6 +9,7 @@ import ProductGrid from '../components/ProductGrid';
 import { useCart } from '../contexts/CartContext';
 import Footer from '../components/Footer';
 import BaseFooter from '../components/BaseFooter';
+import mobileFlex1 from '../assets/view port.png';
 
 const ViewCart = () => {
   const { handleItemAddRemove, isInCart, formatAmount } = useCart();
@@ -36,6 +37,19 @@ const ViewCart = () => {
           isInCart={isInCart}
           formatAmount={formatAmount}
         />
+        {/* Implement Carousel Logic */}
+        <Box
+          display={{ xl: 'none', lg: 'none', md: 'none', base: 'flex' }}
+          mb="2rem"
+          w="100vw"
+          h="auto"
+        >
+          <Image src={mobileFlex1} alt="flex_carousel" />
+        </Box>
+        {/* Implement Carousel Logic */}
+        <Box display={{ xl: 'none', lg: 'none', md: 'none', base: 'flex' }}>
+          <CustomerReview />
+        </Box>
         <Footer />
         <BaseFooter />
       </VStack>
