@@ -1,4 +1,4 @@
-import { HStack, Image, Stack, Text, VStack } from '@chakra-ui/react';
+import { Button, HStack, Image, Stack, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import ItemPic from '../assets/Card 4.png';
 import star from '../assets/one.png';
@@ -8,7 +8,7 @@ import TrashIcon from '../assets/TrashVector.png';
 import badgeIcon from '../assets/WarnVector.png';
 import atmIcon from '../assets/AtmVector.png';
 
-const CheckoutCart = () => {
+const CheckoutCart = ({ onOpen }) => {
   const totals = [
     {
       name: 'Subtotal',
@@ -260,12 +260,18 @@ const CheckoutCart = () => {
             </HStack>
           </VStack>
 
-          <Stack
-            p="16px 253.47px 16px 16px"
+          <Button
+            variant="solid"
+            p="32px 253.47px 32px 16px"
             w="100%"
             bg="rgba(0, 22, 22, 1)"
+            _hover={{
+              bg: 'rgba(235, 247, 247, 1)',
+            }}
             borderRadius="8.01px"
             border="0.64px solid rgba(224, 231, 231, 1)"
+            className="group"
+            onClick={onOpen}
           >
             <HStack gap="10px">
               <Text
@@ -273,12 +279,23 @@ const CheckoutCart = () => {
                 fontWeight="500"
                 lineHeight="21.76px"
                 color="rgba(235, 247, 247, 1)"
+                _groupHover={{
+                  color: 'rgba(0, 22, 22, 1)',
+                }}
               >
                 Payment options
               </Text>
-              <Image src={atmIcon} alt="atm" w="15.44px" h="12.01px" />
+              <Image
+                src={atmIcon}
+                alt="atm"
+                w="15.44px"
+                h="12.01px"
+                _groupHover={{
+                  filter: 'brightness(0) invert(1)', // Example: change image color on hover
+                }}
+              />
             </HStack>
-          </Stack>
+          </Button>
         </VStack>
       </HStack>
     </>
