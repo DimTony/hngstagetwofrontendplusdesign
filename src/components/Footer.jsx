@@ -12,6 +12,7 @@ import GraphBg from '../assets/Graph.png';
 import tiktokIcon from '../assets/ic_sharp-tiktok.png';
 import igIcon from '../assets/fe_instagram.png';
 import copyrightIcon from '../assets/copyVector.png';
+import arrowIcon from 'src/assets/Arrow_Right_LG.png';
 
 const Footer = () => {
   return (
@@ -208,11 +209,7 @@ const Footer = () => {
                   p="8px"
                   opacity="70%"
                 >
-                  <Image
-                    bg="transparent"
-                    src="src/assets/Arrow_Right_LG.png"
-                    alt="arrow"
-                  />
+                  <Image bg="transparent" src={arrowIcon} alt="arrow" />
                 </Box>
               </HStack>
             </VStack>
