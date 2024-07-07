@@ -12,7 +12,7 @@ import GraphBg from '../assets/Graph.png';
 import tiktokIcon from '../assets/ic_sharp-tiktok.png';
 import igIcon from '../assets/fe_instagram.png';
 import copyrightIcon from '../assets/copyVector.png';
-import arrowIcon from 'src/assets/Arrow_Right_LG.png';
+import arrowIcon from '../assets/Arrow_Right_LG.png';
 
 const Footer = () => {
   return (
