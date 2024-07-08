@@ -43,7 +43,7 @@ const CheckoutCart = ({ onOpen }) => {
       bottom = 'payment';
       break;
     default:
-      bottom = 'order';
+      bottom = <MobileCheckoutOrder />;
       break;
   }
   return (
