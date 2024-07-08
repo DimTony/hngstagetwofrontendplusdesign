@@ -1,4 +1,12 @@
-import { Button, HStack, Image, Stack, Text, VStack } from '@chakra-ui/react';
+import {
+  Button,
+  HStack,
+  Image,
+  Stack,
+  Text,
+  useDisclosure,
+  VStack,
+} from '@chakra-ui/react';
 import React, { useState } from 'react';
 import ItemPic from '../assets/Card 4.png';
 import star from '../assets/one.png';
@@ -14,6 +22,11 @@ import MobileCheckoutOrder from './MobileCheckoutOrder';
 
 const CheckoutCart = ({ onOpen }) => {
   const [currentMobileBottom, setCurrentMobileBottom] = useState('order');
+
+  const toggleCheckoutView = (value) => {
+    setCurrentMobileBottom(value);
+  };
+
   const totals = [
     {
       name: 'Subtotal',
@@ -37,13 +50,13 @@ const CheckoutCart = ({ onOpen }) => {
 
   switch (currentMobileBottom) {
     case 'order':
-      bottom = <MobileCheckoutOrder />;
+      bottom = <MobileCheckoutOrder toggleCheckoutView={toggleCheckoutView} />;
       break;
     case 'payment':
       bottom = 'payment';
       break;
     default:
-      bottom = <MobileCheckoutOrder />;
+      bottom = <MobileCheckoutOrder toggleCheckoutView={toggleCheckoutView} />;
       break;
   }
   return (
@@ -340,7 +353,7 @@ const CheckoutCart = ({ onOpen }) => {
         <HStack mb="1rem" w="100%" justifyContent="space-between">
           <Button
             h="47px"
-            variant={currentMobileBottom === 'order' ? 'solid' : 'outline'}
+            variant="solid"
             p="10px 44px 10px 44px"
             borderRadius="20px"
             border={
@@ -350,7 +363,7 @@ const CheckoutCart = ({ onOpen }) => {
             }
             bg={
               currentMobileBottom === 'order'
-                ? 'rgba(0, 21, 21, 1)'
+                ? 'black !important'
                 : 'transparent'
             }
             color={
@@ -358,12 +371,13 @@ const CheckoutCart = ({ onOpen }) => {
                 ? 'rgba(238, 255, 255, 1)'
                 : 'black'
             }
+            onClick={() => setCurrentMobileBottom('order')}
           >
             Your order
           </Button>
           <Button
             h="47px"
-            variant={currentMobileBottom === 'payment' ? 'solid' : 'outline'}
+            variant="solid"
             p="10px 14px 10px 14px"
             borderRadius="20px"
             border={
@@ -373,7 +387,7 @@ const CheckoutCart = ({ onOpen }) => {
             }
             bg={
               currentMobileBottom === 'payment'
-                ? 'rgba(0, 21, 21, 1)'
+                ? 'black !important'
                 : 'transparent'
             }
             color={
@@ -381,6 +395,7 @@ const CheckoutCart = ({ onOpen }) => {
                 ? 'rgba(238, 255, 255, 1)'
                 : 'black'
             }
+            onClick={() => setCurrentMobileBottom('payment')}
           >
             Delivery & Payment
           </Button>
