@@ -70,6 +70,12 @@ const GameSection = () => {
               textAlign="center"
               color="white"
               alignItems="flex-start"
+              h="92%"
+              transform={
+                hoveredIndex === index ? 'translateY(0)' : 'translateY(0)'
+              }
+              transition="transform 0.3s ease-in-out"
+              justifyContent={hoveredIndex === index ? 'flex-end' : 'center'}
             >
               <Text fontSize="xl" mb="2" textAlign="left">
                 {imageHeading[index]}
@@ -82,8 +88,21 @@ const GameSection = () => {
               ) : null}
 
               {hoveredIndex === index && (
-                <Button colorScheme="teal" mr="2">
-                  Button 1
+                <Button
+                  variant="solid"
+                  p="27.79px 41.69px 27.79px 41.69px"
+                  mr="2"
+                  borderRadius="50px"
+                  bg="rgba(247, 254, 254, 1)"
+                >
+                  <Text
+                    fontWeight="600"
+                    fontSize="20.84px"
+                    lineHeight="24.47px"
+                    color="rgba(0, 22, 22, 1)"
+                  >
+                    Shop now
+                  </Text>
                 </Button>
               )}
             </Stack>
