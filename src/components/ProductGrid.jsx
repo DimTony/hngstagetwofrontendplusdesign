@@ -76,7 +76,7 @@ const ProductGrid = ({
 
   return (
     <>
-      <VStack mb={mbottom} w="100vw" justifyContent="space-between">
+      {/* <VStack mb={mbottom} w="100vw" justifyContent="space-between">
         <Box
           display="grid"
           gridTemplateColumns={{
@@ -88,7 +88,7 @@ const ProductGrid = ({
           {products.slice(start, GridEnd).map((product) => (
             <VStack
               key={product.id}
-              w={{ xl: '340px', lg: '230px', md: '220px', base: '156px' }}
+              // w={{ xl: '340px', lg: '230px', md: '220px', base: '156px' }}
               h="auto"
               gap="24px"
               _hover={{
@@ -102,7 +102,7 @@ const ProductGrid = ({
               cursor="pointer"
               onClick={() => handleItemAddRemove(product)}
             >
-              <Image w="100%" src={product.image} alt="productImg" />
+              <Image w="310px" h="339px" src={product.image} alt="productImg" />
               <HStack
                 justifyContent="space-between"
                 w="100%"
@@ -214,26 +214,125 @@ const ProductGrid = ({
             </VStack>
           ))}
         </Box>
-      </VStack>
+      </VStack> */}
 
-      {/* <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} spacing={4} w="100%">
-        {products.map((product, index) => (
-          <Box
-            key={index}
-            bg="gray.200"
-            width={{ base: '156px', lg: '312px' }}
-            height={{ base: '236px', lg: '426px' }}
-            maxWidth={{ base: '156px', lg: '312px' }} // Ensure it doesn't stretch beyond this width
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            textAlign="center"
-            boxShadow="md"
-          >
-            {product.name}
-          </Box>
-        ))}
-      </SimpleGrid> */}
+      <VStack w="100%">
+        <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} spacing={4} w="100%">
+          {products.slice(start, GridEnd).map((product) => (
+            <Box key={product.id} w="100%" h="426px">
+              <Image w="310px" h="339px" src={product.image} alt="productImg" />
+              <HStack
+                justifyContent="space-between"
+                w="100%"
+                h="58.48px"
+                bg="transparent"
+                className="hstack_child"
+                display={isInCart(product.id) ? 'none' : 'flex'}
+              >
+                <VStack alignItems="flex-start" spacing={0}>
+                  <Text
+                    fontWeight={{
+                      xl: '600',
+                      lg: '500',
+                      md: '500',
+                      base: '400',
+                    }}
+                    fontSize={{
+                      xl: '20px',
+                      lg: '18px',
+                      md: '17px',
+                      base: '16px',
+                    }}
+                    lineHeight={{
+                      xl: '23.48px',
+                      lg: '21px',
+                      md: '20px',
+                      base: '19.2px',
+                    }}
+                    color="rgba(0, 21, 21, 1)"
+                  >
+                    {product.name}
+                  </Text>
+                  <Text
+                    display={{
+                      xl: 'flex',
+                      lg: 'flex',
+                      md: 'flex',
+                      base: 'none',
+                    }}
+                    fontWeight="400"
+                    fontSize={{
+                      xl: '14px',
+                      lg: '13px',
+                      md: '11px',
+                      base: '8px',
+                    }}
+                    lineHeight="16.44px"
+                    color="rgba(112, 115, 115, 1)"
+                  >
+                    {product.seller}
+                  </Text>
+                </VStack>
+                <Text
+                  fontWeight="600"
+                  fontSize={{
+                    xl: '18px',
+                    lg: '17px',
+                    md: '16px',
+                    base: '14px',
+                  }}
+                  lineHeight={{
+                    xl: '21.13px',
+                    lg: '20px',
+                    md: '18px',
+                    base: '17.07px',
+                  }}
+                  color={{
+                    xl: 'rgba(0,0,0,1)',
+                    lg: 'rgba(0,0,0,1)',
+                    md: 'rgba(0,0,0,1)',
+                    base: 'rgba(0,22,22,1)',
+                  }}
+                >
+                  {formatAmount(product.amount)}
+                </Text>
+              </HStack>
+              <Stack
+                display={isInCart(product.id) ? 'flex' : 'none'}
+                className="stack_child"
+                bg={isInCart(product.id) ? 'rgba(0, 54, 54, 1)' : 'transparent'}
+                w="100%"
+                h="58.48px"
+                borderRadius="30px"
+                border="0.5px solid rgba(147, 152, 152, 1)"
+                alignItems="center"
+                justifyContent="center"
+                p="16px 24px 16px 24px"
+              >
+                <Text
+                  color={
+                    isInCart(product.id) ? '#ffffff' : 'rgba(53, 53, 59, 1)'
+                  }
+                  fontSize={{
+                    xl: '20px',
+                    lg: '17px',
+                    md: '15px',
+                    base: '11px',
+                  }}
+                  lineHeight={{
+                    xl: '24px',
+                    lg: '20px',
+                    md: '15px',
+                    base: '13.2px',
+                  }}
+                >
+                  {isInCart(product.id) ? 'Added To Cart' : 'Shop This'}
+                </Text>
+              </Stack>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </VStack>
     </>
   );
 };
