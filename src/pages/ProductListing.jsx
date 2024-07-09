@@ -127,11 +127,8 @@ const ProductListing = () => {
           Blog Post
         </Text>
         <Accordion />
-        {/* Implement Carousel Logic */}
 
         <ExpandableImages />
-
-        {/* Implement Carousel Logic */}
         <ProductGrid
           start={24}
           end={'Third'}

@@ -33,13 +33,12 @@ const GameSection = () => {
 
   return (
     <>
-      <HStack spacing={4} mb="2rem">
+      <HStack spacing={2} mb="2rem">
         {images.map((src, index) => (
           <Box
             key={index}
             position="relative"
             onMouseEnter={() => handleMouseEnter(index)}
-            // width={hoveredIndex === index ? '543px' : '281px'}
             width={hoveredIndex === index ? '60%' : '20%'}
             height="420px"
             borderRadius="24px"
