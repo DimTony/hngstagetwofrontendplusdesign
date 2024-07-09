@@ -219,8 +219,28 @@ const ProductGrid = ({
       <VStack w="100%">
         <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} spacing={4} w="100%">
           {products.slice(start, GridEnd).map((product) => (
-            <Box key={product.id} w="100%" h="426px">
-              <Image w="310px" h="339px" src={product.image} alt="productImg" />
+            <Box
+              key={product.id}
+              w="100%"
+              h="426px"
+              cursor="pointer"
+              onClick={() => handleItemAddRemove(product)}
+              _hover={{
+                '& .hstack_child': {
+                  display: 'none',
+                },
+                '& .stack_child': {
+                  display: 'flex',
+                },
+              }}
+            >
+              <Image
+                w="310px"
+                h="339px"
+                src={product.image}
+                alt="productImg"
+                mb="24px"
+              />
               <HStack
                 justifyContent="space-between"
                 w="100%"
