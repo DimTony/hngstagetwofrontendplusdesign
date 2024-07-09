@@ -21,8 +21,8 @@ import SecondAccordion from '../components/SecondAccordion';
 import Footer from '../components/Footer';
 import BaseFooter from '../components/BaseFooter';
 import ExpandableImages from '../components/ExpandableImages';
-import Carousel from '../components/ImgCarousel';
 import ImgCarousel from '../components/ImgCarousel';
+import InfiniteSlider from '../components/InfiniteSlider';
 
 const ProductListing = () => {
   const {
@@ -47,14 +47,16 @@ const ProductListing = () => {
           baseBottom={'Discover our latest collection of totebags.'}
         />
         {/* Implement Carousel Logic */}
-        <Box
+        {/* <Box
           display={{ xl: 'flex', lg: 'flex', md: 'flex', base: 'none' }}
           mb="3rem"
           w="100%"
           h="auto"
         >
           <Image src={flex1} alt="flex_carousel" />
-        </Box>
+        </Box> */}
+        <ImgCarousel />
+        {/* <InfiniteSlider /> */}
         {/* Implement Carousel Logic */}
         <TextTemplate
           xlTop={'Available Stock'}
