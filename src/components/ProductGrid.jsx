@@ -50,8 +50,8 @@ const ProductGrid = ({ start, end, formatAmount }) => {
     GridEnd = useBreakpointValue({
       base: 20,
       md: 40,
-      lg: 40,
-      xl: 40,
+      lg: 32,
+      xl: 32,
     });
     mbottom = useBreakpointValue({
       base: '2rem',

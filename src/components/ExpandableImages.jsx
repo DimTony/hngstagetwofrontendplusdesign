@@ -39,7 +39,8 @@ const GameSection = () => {
             key={index}
             position="relative"
             onMouseEnter={() => handleMouseEnter(index)}
-            width={hoveredIndex === index ? '543px' : '281px'}
+            // width={hoveredIndex === index ? '543px' : '281px'}
+            width={hoveredIndex === index ? '60%' : '20%'}
             height="420px"
             borderRadius="24px"
             overflow="hidden"
@@ -81,11 +82,9 @@ const GameSection = () => {
                 {imageHeading[index]}
               </Text>
 
-              {/* {hoveredIndex === index ? ( */}
               <Text fontSize="md" textAlign="left">
                 {imageSubHeading[index]}
               </Text>
-              {/* ) : null} */}
 
               {hoveredIndex === index && (
                 <Button
