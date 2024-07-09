@@ -223,7 +223,7 @@ const ProductGrid = ({ start, end, formatAmount }) => {
             <Box
               key={product.id}
               w="100%"
-              h="426px"
+              h={{ xl: '426px', base: '236px' }}
               cursor="pointer"
               _hover={{
                 '& .hstack_child': {
@@ -237,15 +237,15 @@ const ProductGrid = ({ start, end, formatAmount }) => {
             >
               <Image
                 w="310px"
-                h="339px"
+                h={{ xl: '339px', base: '192px' }}
                 src={product.image}
                 alt="productImg"
-                mb="24px"
+                mb={{ xl: '24px', base: '10px' }}
               />
               <HStack
                 justifyContent="space-between"
                 w="100%"
-                h="58.48px"
+                h={{ xl: '58.48px', base: '36px' }}
                 bg="transparent"
                 className="hstack_child"
                 display={isInCart(product.id) ? 'none' : 'flex'}
