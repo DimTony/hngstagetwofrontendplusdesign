@@ -1,40 +1,47 @@
-import React from 'react';
-import { Box, HStack, Image } from '@chakra-ui/react';
-import flex3 from '../assets/D-0014.png';
+import React, { useState } from 'react';
+import { Box, HStack, Image, Text } from '@chakra-ui/react';
+import flex3 from '../assets/D-001.png';
 import flex4 from '../assets/D-002.png';
 import flex5 from '../assets/D-003.png';
 
+const images = [
+  { id: 1, src: flex3 },
+  { id: 2, src: flex4 },
+  { id: 3, src: flex5 },
+];
 const SecondAccordion = () => {
+  const [focusedImage, setFocusedImage] = useState(images[0].id);
+  const [hoveredImage, setHoveredImage] = useState(null);
+
   return (
     <>
-      <HStack
-        mb="5rem"
-        w="100%"
-        gap="24px"
-        display={{ xl: 'flex', lg: 'flex', md: 'flex', base: 'none' }}
-        justifyContent="space-between"
-      >
-        <Box
-          display={{ xl: 'flex', lg: 'flex', md: 'flex', base: 'none' }}
-          w="643px"
-          h="620px"
-        >
-          <Image src={flex3} alt="flex_carousel" />
-        </Box>
-        <Box
-          display={{ xl: 'flex', lg: 'flex', md: 'flex', base: 'none' }}
-          w="311px"
-          h="620px"
-        >
-          <Image src={flex4} alt="flex_carousel" />
-        </Box>
-        <Box
-          display={{ xl: 'flex', lg: 'flex', md: 'flex', base: 'none' }}
-          w="311px"
-          h="620px"
-        >
-          <Image src={flex5} alt="flex_carousel" />
-        </Box>
+      <HStack w="100%" spacing={4}>
+        {images.map((image) => (
+          <Box
+            key={image.id}
+            className={
+              focusedImage === image.id
+                ? hoveredImage
+                  ? 'compressed'
+                  : 'full-width'
+                : hoveredImage === image.id
+                ? 'full-width'
+                : 'compressed'
+            }
+            onMouseEnter={() => setHoveredImage(image.id)}
+            onMouseLeave={() => setHoveredImage(images[0].id)}
+            onClick={() => setFocusedImage(image.id)}
+            transition="width 0.3s ease"
+            w="100%"
+          >
+            <Image
+              src={image.src}
+              alt={`image-${image.id}`}
+              w="100%"
+              h="100%"
+            />
+          </Box>
+        ))}
       </HStack>
     </>
   );

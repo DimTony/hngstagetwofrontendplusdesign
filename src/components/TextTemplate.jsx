@@ -97,7 +97,7 @@ export const BaseTextTemplate = ({
   return (
     <>
       <VStack
-        display={dis}
+        display={{ lg: 'none', base: 'flex' }}
         alignItems="flex-start"
         w={{ xl: '100%', lg: '100%', md: '100%', base: '100%' }}
         mb="1rem"

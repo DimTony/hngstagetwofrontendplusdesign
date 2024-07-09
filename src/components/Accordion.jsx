@@ -1,4 +1,4 @@
-import { Box, Image, VStack } from '@chakra-ui/react';
+import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import mobileBlog1 from '../assets/B.P-001.png';
 import mobileBlog2 from '../assets/B.P-002.png';

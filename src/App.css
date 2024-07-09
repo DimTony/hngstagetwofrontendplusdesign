@@ -40,3 +40,17 @@ input,
 textarea {
   font-family: inherit;
 }
+
+.full-width {
+  width: 643px;
+  height: 420px;
+}
+
+.compressed {
+  width: 311px;
+  height: 20px;
+}
+
+.HStack > div {
+  transition: width 0.3s ease, height 0.3s ease;
+}

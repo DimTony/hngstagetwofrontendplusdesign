@@ -1,0 +1,50 @@
+.c_container {
+  width: 100%;
+  height: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img_box {
+  width: 311px;
+  height: 620px;
+  margin: 10px;
+  border-radius: 10px;
+  background: url('../assets/D-0014.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: width 0.5s;
+}
+
+.img_box:nth-child(2) {
+  background: url('../assets/D-002.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.img_box:nth-child(3) {
+  background: url('../assets/D-003.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.img_box h3 {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  opacity: 0;
+}
+
+.img_box:hover {
+  width: 643px;
+  cursor: pointer;
+}

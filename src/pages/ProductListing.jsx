@@ -20,6 +20,9 @@ import Accordion from '../components/Accordion';
 import SecondAccordion from '../components/SecondAccordion';
 import Footer from '../components/Footer';
 import BaseFooter from '../components/BaseFooter';
+import ExpandableImages from '../components/ExpandableImages';
+import Carousel from '../components/ImgCarousel';
+import ImgCarousel from '../components/ImgCarousel';
 
 const ProductListing = () => {
   const {
@@ -98,6 +101,7 @@ const ProductListing = () => {
           formatAmount={formatAmount}
         />
         <BaseTextTemplate
+          show={'no_base'}
           baseTop={'Trends & Catalogue'}
           baseBottom={'Recent happenings In fashion events this last weekend.'}
         />
@@ -124,7 +128,9 @@ const ProductListing = () => {
         </Text>
         <Accordion />
         {/* Implement Carousel Logic */}
-        <SecondAccordion />
+
+        <ExpandableImages />
+
         {/* Implement Carousel Logic */}
         <ProductGrid
           start={24}
