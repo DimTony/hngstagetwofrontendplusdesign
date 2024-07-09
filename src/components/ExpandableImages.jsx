@@ -33,7 +33,7 @@ const GameSection = () => {
 
   return (
     <>
-      <HStack spacing={2} mb="2rem">
+      <HStack spacing={2} mb="2rem" display={{ lg: 'flex', base: 'none' }}>
         {images.map((src, index) => (
           <Box
             key={index}

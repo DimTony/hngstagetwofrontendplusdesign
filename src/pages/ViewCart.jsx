@@ -31,7 +31,7 @@ const ViewCart = () => {
           xlBottom={'Similar totebags like the one selected.'}
         />
         <ProductGrid
-          start={32}
+          start={24}
           end={'Third'}
           handleItemAddRemove={handleItemAddRemove}
           isInCart={isInCart}
