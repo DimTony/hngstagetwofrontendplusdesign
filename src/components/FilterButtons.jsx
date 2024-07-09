@@ -1,12 +1,13 @@
 import React from 'react';
-import { Box, HStack, Image, Text } from '@chakra-ui/react';
+import { Box, HStack, Image, Stack, Text } from '@chakra-ui/react';
 import allIcon from '../assets/AllIcon.png';
 
 const FilterButtons = () => {
   return (
     <>
-      <Box
+      <Stack
         w="100%"
+        justifyContent="center"
         overflowX="auto"
         css={{
           '&::-webkit-scrollbar': {
@@ -21,7 +22,7 @@ const FilterButtons = () => {
           h={{ xl: '56px', lg: '50px', md: '45px', base: '39px' }}
           gap={{ xl: '16px', lg: '14px', md: '12px', base: '8px' }}
           position="relative"
-          left={{ xl: '28%', lg: '12%', md: '10%', base: '0' }}
+          left={{ lg: '22%', md: '10%', base: '0' }}
           mb="1rem"
         >
           <HStack
@@ -91,7 +92,7 @@ const FilterButtons = () => {
             </Text>
           </HStack>
         </HStack>
-      </Box>
+      </Stack>
     </>
   );
 };
