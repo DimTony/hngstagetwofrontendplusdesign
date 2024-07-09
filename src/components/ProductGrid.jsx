@@ -44,7 +44,7 @@ const ProductGrid = ({ start, end, formatAmount }) => {
     mbottom = useBreakpointValue({
       base: '2rem',
       md: '1rem',
-      lg: '2rem',
+      lg: '0',
     });
   } else if (end === 'Third') {
     GridEnd = useBreakpointValue({

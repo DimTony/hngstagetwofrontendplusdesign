@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Box, HStack, Image, Text } from '@chakra-ui/react';
+import { Box, Button, HStack, Image, Stack, Text } from '@chakra-ui/react';
 import flex3 from '../assets/D-001.png';
 import flex4 from '../assets/D-002.png';
 import flex5 from '../assets/D-003.png';
 
 const images = [flex3, flex4, flex5];
+const imageHeading = [
+  'Explore the totebag fashion',
+  'Branded Collections',
+  'Totes as Office wears',
+];
+const imageSubHeading = [
+  'Totes are reliable carriage that adds to the details of your dress fashion with contradicting your fashion sense.',
+  'Customize your style and brands here on thetotebagshop.',
+  'Totes can be worn to workspaces and to the office likewise.',
+];
 
 const GameSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
-  // This effect will run once when the component mounts
   useEffect(() => {
     const savedIndex = localStorage.getItem('hoveredIndex');
     if (savedIndex !== null) {
@@ -24,22 +33,6 @@ const GameSection = () => {
 
   return (
     <>
-      {/* <HStack spacing={4} mb="2rem">
-        {images.map((src, index) => (
-          <Image
-            key={index}
-            src={src}
-            width={hoveredIndex === index ? '543px' : '281px'}
-            h="420px"
-            objectFit="cover"
-            transition="width 0.3s ease-in-out"
-            onMouseEnter={() => handleMouseEnter(index)}
-            borderRadius="24px"
-            cursor="pointer"
-          />
-        ))}
-      </HStack> */}
-
       <HStack spacing={4} mb="2rem">
         {images.map((src, index) => (
           <Box
@@ -52,18 +45,6 @@ const GameSection = () => {
             overflow="hidden"
             cursor="pointer"
             transition="width 0.3s ease-in-out"
-            _hover={{
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                bg: 'rgba(255, 255, 255, 0.2)', // Light overlay color
-                borderRadius: '24px',
-              },
-            }}
           >
             <Image
               src={src}
@@ -72,6 +53,40 @@ const GameSection = () => {
               objectFit="cover"
               borderRadius="24px"
             />
+            <Box
+              position="absolute"
+              top="0"
+              left="0"
+              width="100%"
+              height="100%"
+              bg="rgba(0, 0, 0, 0.5)"
+              borderRadius="24px"
+            />
+            <Stack
+              position="absolute"
+              bottom="20px"
+              left="20px"
+              right="20px"
+              textAlign="center"
+              color="white"
+              alignItems="flex-start"
+            >
+              <Text fontSize="xl" mb="2" textAlign="left">
+                {imageHeading[index]}
+              </Text>
+
+              {hoveredIndex === index ? (
+                <Text fontSize="md" textAlign="left">
+                  {imageSubHeading[index]}
+                </Text>
+              ) : null}
+
+              {hoveredIndex === index && (
+                <Button colorScheme="teal" mr="2">
+                  Button 1
+                </Button>
+              )}
+            </Stack>
           </Box>
         ))}
       </HStack>
