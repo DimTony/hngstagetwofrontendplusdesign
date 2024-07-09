@@ -37,13 +37,13 @@ export const TextTemplate = ({
       <VStack
         display={dis}
         alignItems="flex-start"
-        w={{ xl: '100%', lg: '100%', md: '100%', base: '328px' }}
-        mb="1rem"
+        w={{ xl: '100%', lg: '100%', md: '100%', base: '100%' }}
+        mb={{ xl: '1rem', base: '0' }}
       >
         <Text
           color="rgba(0, 22, 22, 1)"
           fontWeight="600"
-          fontSize={{ xl: '32px', lg: '24px', md: '18px', base: '12px' }}
+          fontSize={{ xl: '32px', lg: '24px', md: '18px', base: '14px' }}
           lineHeight={{ xl: '38.4px', lg: '28px', md: '18px', base: '14.4px' }}
           mb="0.7rem"
         >
