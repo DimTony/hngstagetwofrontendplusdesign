@@ -2,6 +2,7 @@ import {
   Box,
   HStack,
   Image,
+  Input,
   Stack,
   Text,
   useBreakpointValue,
@@ -70,7 +71,7 @@ const SearchBar = () => {
               h="auto"
             />
           </Stack>
-          <Box w="90%" h="100%" borderRadius="0px 8px 8px 0px" p="1rem">
+          {/* <Box w="90%" h="100%" borderRadius="0px 8px 8px 0px" p="1rem">
             <Text
               color="rgba(147, 152, 152, 1)"
               fontSize={{ xl: '19.64', lg: '17px', md: '16px', base: '12px' }}
@@ -78,7 +79,18 @@ const SearchBar = () => {
             >
               {textContent}
             </Text>
-          </Box>
+          </Box> */}
+          <Input
+            w="90%"
+            h="100%"
+            borderRadius="0px 8px 8px 0px"
+            border="none"
+            p="1rem"
+            color="rgba(147, 152, 152, 1)"
+            fontSize={{ xl: '19.64', lg: '17px', md: '16px', base: '12px' }}
+            type="text"
+            placeholder={textContent}
+          />
           <Stack
             display={{ xl: 'none', lg: 'none', md: 'none', base: 'flex' }}
             justifyContent="center"
