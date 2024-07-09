@@ -99,8 +99,9 @@ export const BaseTextTemplate = ({
       <VStack
         display={dis}
         alignItems="flex-start"
-        w={{ xl: '100%', lg: '100%', md: '100%', base: '328px' }}
+        w={{ xl: '100%', lg: '100%', md: '100%', base: '100%' }}
         mb="1rem"
+        mt="2rem"
       >
         <Text
           color="rgba(0, 0, 0, 1)"

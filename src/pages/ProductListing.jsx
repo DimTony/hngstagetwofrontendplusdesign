@@ -78,7 +78,7 @@ const ProductListing = () => {
           border="0.5px solid rgba(53, 53, 59, 1)"
           display={{ xl: 'none', lg: 'none', md: 'none', base: 'flex' }}
         >
-          <Text>See More</Text>
+          <Text textAlign="center">See More</Text>
         </Stack>
         {/* Implement Carousel Logic */}
         <Box
