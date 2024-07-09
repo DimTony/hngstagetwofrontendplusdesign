@@ -2,6 +2,7 @@ import {
   Box,
   HStack,
   Image,
+  SimpleGrid,
   Stack,
   Text,
   useBreakpointValue,
@@ -75,13 +76,11 @@ const ProductGrid = ({
 
   return (
     <>
-      <VStack mb={mbottom} bg="transparent" w="100%">
+      <VStack mb={mbottom} w="100vw" justifyContent="space-between">
         <Box
           display="grid"
           gridTemplateColumns={{
             base: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-            lg: 'repeat(4, 1fr)',
             xl: 'repeat(4, 1fr)',
           }}
           gap={{ base: '20px', md: '30px' }}
@@ -216,6 +215,25 @@ const ProductGrid = ({
           ))}
         </Box>
       </VStack>
+
+      {/* <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} spacing={4} w="100%">
+        {products.map((product, index) => (
+          <Box
+            key={index}
+            bg="gray.200"
+            width={{ base: '156px', lg: '312px' }}
+            height={{ base: '236px', lg: '426px' }}
+            maxWidth={{ base: '156px', lg: '312px' }} // Ensure it doesn't stretch beyond this width
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            textAlign="center"
+            boxShadow="md"
+          >
+            {product.name}
+          </Box>
+        ))}
+      </SimpleGrid> */}
     </>
   );
 };

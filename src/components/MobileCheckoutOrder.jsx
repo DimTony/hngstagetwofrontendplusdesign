@@ -313,6 +313,9 @@ const MobileCheckoutOrder = ({ toggleCheckoutView }) => {
         lineHeight="22.4px"
         fontWeight="600"
         color="rgba(46, 48, 48, 1)"
+        onClick={() => {
+          toggleCheckoutView('payment');
+        }}
       >
         Proceed to checkout
       </Button>

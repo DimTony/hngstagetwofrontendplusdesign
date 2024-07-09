@@ -19,6 +19,7 @@ import itemPic from '../assets/Product 1.png';
 import bullet from '../assets/BulletVector.png';
 import trashIcon from '../assets/DelVector.png';
 import MobileCheckoutOrder from './MobileCheckoutOrder';
+import MobilePayment from './MobilePayment';
 
 const CheckoutCart = ({ onOpen }) => {
   const [currentMobileBottom, setCurrentMobileBottom] = useState('order');
@@ -53,7 +54,7 @@ const CheckoutCart = ({ onOpen }) => {
       bottom = <MobileCheckoutOrder toggleCheckoutView={toggleCheckoutView} />;
       break;
     case 'payment':
-      bottom = 'payment';
+      bottom = <MobilePayment />;
       break;
     default:
       bottom = <MobileCheckoutOrder toggleCheckoutView={toggleCheckoutView} />;
