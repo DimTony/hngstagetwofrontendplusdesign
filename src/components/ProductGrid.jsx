@@ -10,14 +10,15 @@ import {
 } from '@chakra-ui/react';
 import { products } from '../assets/products';
 import React from 'react';
+import { useCart } from '../contexts/CartContext';
 
-const ProductGrid = ({
-  start,
-  end,
-  handleItemAddRemove,
-  formatAmount,
-  isInCart,
-}) => {
+const ProductGrid = ({ start, end, formatAmount }) => {
+  const { cartItems, handleItemAddRemove } = useCart();
+
+  const isInCart = (productId) => {
+    return cartItems.some((item) => item.id === productId);
+  };
+
   let GridEnd;
   let mbottom;
   if (end === 'First') {
@@ -224,7 +225,6 @@ const ProductGrid = ({
               w="100%"
               h="426px"
               cursor="pointer"
-              onClick={() => handleItemAddRemove(product)}
               _hover={{
                 '& .hstack_child': {
                   display: 'none',
@@ -233,6 +233,7 @@ const ProductGrid = ({
                   display: 'flex',
                 },
               }}
+              onClick={() => handleItemAddRemove(product)}
             >
               <Image
                 w="310px"

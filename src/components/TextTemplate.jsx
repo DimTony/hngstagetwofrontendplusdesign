@@ -45,6 +45,7 @@ export const TextTemplate = ({
           fontWeight="600"
           fontSize={{ xl: '32px', lg: '24px', md: '18px', base: '12px' }}
           lineHeight={{ xl: '38.4px', lg: '28px', md: '18px', base: '14.4px' }}
+          mb="0.7rem"
         >
           {topTextContent}
         </Text>
