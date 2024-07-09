@@ -81,11 +81,11 @@ const GameSection = () => {
                 {imageHeading[index]}
               </Text>
 
-              {hoveredIndex === index ? (
-                <Text fontSize="md" textAlign="left">
-                  {imageSubHeading[index]}
-                </Text>
-              ) : null}
+              {/* {hoveredIndex === index ? ( */}
+              <Text fontSize="md" textAlign="left">
+                {imageSubHeading[index]}
+              </Text>
+              {/* ) : null} */}
 
               {hoveredIndex === index && (
                 <Button
