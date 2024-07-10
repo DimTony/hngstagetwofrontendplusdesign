@@ -33,6 +33,7 @@ const FilterButtons = () => {
             justifyContent="center"
             border="0.5px solid rgba(147, 152, 152, 1)"
             bg="rgba(0, 22, 22, 1)"
+            cursor="pointer"
           >
             <Image src={allIcon} w="18px" h="auto" bg="transparent" />
             <Text color="#ffffff" fontSize="20px" lineHeight="24px">
@@ -47,6 +48,10 @@ const FilterButtons = () => {
             justifyContent="center"
             border="0.5px solid rgba(147, 152, 152, 1)"
             p="16px 24px 16px 24px"
+            cursor="pointer"
+            _hover={{
+              bg: '#e6ebeb',
+            }}
           >
             <Text color="rgba(53, 53, 59, 1)" fontSize="20px" lineHeight="24px">
               Corduroy
@@ -60,6 +65,10 @@ const FilterButtons = () => {
             justifyContent="center"
             border="0.5px solid rgba(147, 152, 152, 1)"
             p="16px 24px 16px 24px"
+            cursor="pointer"
+            _hover={{
+              bg: '#e6ebeb',
+            }}
           >
             <Text color="rgba(53, 53, 59, 1)" fontSize="20px" lineHeight="24px">
               Denim
@@ -73,6 +82,10 @@ const FilterButtons = () => {
             justifyContent="center"
             border="0.5px solid rgba(147, 152, 152, 1)"
             p="16px 24px 16px 24px"
+            cursor="pointer"
+            _hover={{
+              bg: '#e6ebeb',
+            }}
           >
             <Text color="rgba(53, 53, 59, 1)" fontSize="20px" lineHeight="24px">
               Adire
@@ -86,6 +99,10 @@ const FilterButtons = () => {
             justifyContent="center"
             border="0.5px solid rgba(147, 152, 152, 1)"
             p="16px 24px 16px 24px"
+            cursor="pointer"
+            _hover={{
+              bg: '#e6ebeb',
+            }}
           >
             <Text color="rgba(53, 53, 59, 1)" fontSize="20px" lineHeight="24px">
               Leather
