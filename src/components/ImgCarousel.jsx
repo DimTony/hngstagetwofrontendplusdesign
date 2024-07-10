@@ -83,6 +83,7 @@ const ImgCarousel = () => {
       overflow="hidden"
       display={{ xl: 'flex', base: 'none' }}
       mb="1rem"
+      borderRadius="37.19px"
     >
       <Flex
         position="absolute"
@@ -113,10 +114,21 @@ const ImgCarousel = () => {
       <Flex
         transition="transform 0.5s ease-in-out"
         transform={`translateX(-${activeIndex * 100}%)`}
+        borderRadius="37.19px"
       >
         {images.map((image, index) => (
-          <Box key={index} flex="none" width="full" position="relative">
-            <Image src={image.src} alt={`Slide ${index}`} />
+          <Box
+            borderRadius="37.19px"
+            key={index}
+            flex="none"
+            width="full"
+            position="relative"
+          >
+            <Image
+              borderRadius="37.19px"
+              src={image.src}
+              alt={`Slide ${index}`}
+            />
 
             <VStack
               color="white"
