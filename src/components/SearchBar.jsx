@@ -3,6 +3,8 @@ import {
   HStack,
   Image,
   Input,
+  List,
+  ListItem,
   Stack,
   Text,
   useBreakpointValue,
@@ -11,9 +13,31 @@ import {
 import searchIcon from '../assets/uil_search.png';
 import SearchBaseIcon from '../assets/SearchBaseVector.png';
 import BaseSearchLeftIcon from '../assets/BaseSearchLeftIcon.png';
-import React from 'react';
+import React, { useState } from 'react';
 
 const SearchBar = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [suggestions, setSuggestions] = useState([
+    'Corduroy Totebag',
+    'Denim Totebag',
+    'Adire Totebag',
+    'Leather Totebag',
+    'Chinos Totebag',
+    'Pure Cotton Totebag',
+    'Cotton Totebag',
+    'Black Chinos Totebag',
+    'Chinos & Cotton Totebag',
+    'Cotton Totebag',
+  ]);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const filteredSuggestions = suggestions.filter((suggestion) =>
+    suggestion.toLowerCase().includes(inputValue.toLowerCase())
+  );
+
   const iconSrc = useBreakpointValue({
     base: SearchBaseIcon,
     md: searchIcon,
@@ -55,6 +79,7 @@ const SearchBar = () => {
             md: 'none',
             base: '0.5px solid rgba(223, 221, 220, 1)',
           }}
+          position="relative"
         >
           <Stack
             justifyContent="center"
@@ -71,15 +96,7 @@ const SearchBar = () => {
               h="auto"
             />
           </Stack>
-          {/* <Box w="90%" h="100%" borderRadius="0px 8px 8px 0px" p="1rem">
-            <Text
-              color="rgba(147, 152, 152, 1)"
-              fontSize={{ xl: '19.64', lg: '17px', md: '16px', base: '12px' }}
-              bg="transparent"
-            >
-              {textContent}
-            </Text>
-          </Box> */}
+
           <Input
             w="100%"
             h="100%"
@@ -90,7 +107,37 @@ const SearchBar = () => {
             fontSize={{ xl: '19.64', lg: '17px', md: '16px', base: '12px' }}
             type="text"
             placeholder={textContent}
+            value={inputValue}
+            onChange={handleInputChange}
           />
+          {inputValue && (
+            <Box
+              position="absolute"
+              top="100%"
+              left="0"
+              right="0"
+              bg="white"
+              border="1px solid rgba(147, 152, 152, 0.5)"
+              borderRadius="0px 8px 8px 0px"
+              zIndex="10"
+            >
+              <List spacing={0}>
+                {filteredSuggestions.map((suggestion, index) => (
+                  <ListItem
+                    key={index}
+                    p="1rem"
+                    cursor="pointer"
+                    _hover={{ bg: 'gray.100' }}
+                    onClick={() => {
+                      setInputValue(suggestion);
+                    }}
+                  >
+                    {suggestion}
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+          )}
           <Stack
             display={{ xl: 'none', lg: 'none', md: 'none', base: 'flex' }}
             justifyContent="center"
