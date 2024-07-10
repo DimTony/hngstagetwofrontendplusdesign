@@ -81,7 +81,7 @@ const SearchBar = () => {
             </Text>
           </Box> */}
           <Input
-            w="90%"
+            w="100%"
             h="100%"
             borderRadius="0px 8px 8px 0px"
             border="none"

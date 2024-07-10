@@ -182,7 +182,7 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                 className="stack_child"
                 bg={isInCart(product.id) ? 'rgba(0, 54, 54, 1)' : 'transparent'}
                 w="100%"
-                h="58.48px"
+                h={{xl: "58.48px", base: ''}}
                 borderRadius="30px"
                 border="0.5px solid rgba(147, 152, 152, 1)"
                 alignItems="center"
