@@ -22,7 +22,7 @@ const FilterButtons = () => {
           h={{ xl: '56px', lg: '50px', md: '45px', base: '39px' }}
           gap={{ xl: '16px', lg: '14px', md: '12px', base: '8px' }}
           position="relative"
-          left={{ lg: '22%', md: '10%', base: '0' }}
+          left={{ lg: '24%', md: '10%', base: '0' }}
           mb="1rem"
         >
           <HStack

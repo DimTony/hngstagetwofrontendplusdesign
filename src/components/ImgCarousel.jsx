@@ -8,7 +8,6 @@ import {
   HStack,
   VStack,
 } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import flex1 from '../assets/flex1.png';
 import flex2 from '../assets/flex2.png';
 import flex3 from '../assets/flex3.png';
@@ -118,15 +117,7 @@ const ImgCarousel = () => {
         {images.map((image, index) => (
           <Box key={index} flex="none" width="full" position="relative">
             <Image src={image.src} alt={`Slide ${index}`} />
-            {/* <Text
-              position="absolute"
-              bottom={4}
-              left={4}
-              color="white"
-              fontSize="xl"
-            >
-              {image.text}
-            </Text> */}
+
             <VStack
               color="white"
               alignItems="flex-start"
