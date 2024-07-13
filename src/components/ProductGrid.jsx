@@ -106,7 +106,7 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                 />
                 <HStack
                   justifyContent="space-between"
-                  w="100%"
+                  w="310px"
                   h={{ xl: '58.48px', base: '36px' }}
                   bg="red"
                   className="hstack_child"
