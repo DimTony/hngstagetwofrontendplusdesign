@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
         const response = await axios.get(
           `https://api.timbu.cloud/products?organization_id=${orgId}&reverse_sort=false&page=1&size=30&Appid=${appId}&Apikey=${apiKey}`
         );
-        console.log(response.data.items);
+
         setProducts(response.data.items);
       } catch (error) {
         console.error('Error fetching products:', error);

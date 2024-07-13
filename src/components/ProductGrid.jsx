@@ -8,12 +8,12 @@ import {
   useBreakpointValue,
   VStack,
 } from '@chakra-ui/react';
-import { products } from '../assets/products';
+// import { products } from '../assets/products';
 import React from 'react';
 import { useCart } from '../contexts/CartContext';
 
 const ProductGrid = ({ start, end, formatAmount }) => {
-  const { cartItems, handleItemAddRemove } = useCart();
+  const { cartItems, products, handleItemAddRemove } = useCart();
 
   const isInCart = (productId) => {
     return cartItems.some((item) => item.id === productId);
@@ -97,7 +97,8 @@ const ProductGrid = ({ start, end, formatAmount }) => {
               <Image
                 w="310px"
                 h={{ xl: '339px', base: '192px' }}
-                src={product.image}
+                // src={product.image}
+                src={product.photos.url}
                 alt="productImg"
                 mb={{ xl: '24px', base: '10px' }}
               />
@@ -174,7 +175,8 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                     base: 'rgba(0,22,22,1)',
                   }}
                 >
-                  {formatAmount(product.amount)}
+                  {/* {formatAmount(product.amount)} */}
+                  {formatAmount(product.currentPrice[0].USD[0])}
                 </Text>
               </HStack>
               <Stack
@@ -182,7 +184,7 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                 className="stack_child"
                 bg={isInCart(product.id) ? 'rgba(0, 54, 54, 1)' : 'transparent'}
                 w="100%"
-                h={{xl: "58.48px", base: ''}}
+                h={{ xl: '58.48px', base: '' }}
                 borderRadius="30px"
                 border="0.5px solid rgba(147, 152, 152, 1)"
                 alignItems="center"
