@@ -1,9 +1,45 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const appId = import.meta.env.VITE_APP_ID;
+    const orgId = import.meta.env.VITE_ORG_ID;
+
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.timbu.cloud/products?organization_id=${orgId}&reverse_sort=false&page=1&size=30&Appid=${appId}&Apikey=${apiKey}`
+        );
+        console.log(response);
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // useEffect(() => {
+  //   fetch(
+  //     'https://api.timbu.cloud/products?organization_id=afcdbe3fe39c4c3d921c1e2edd46b0a9&reverse_sort=false&page=1&size=30&Appid=QH3R2FP5H8EW8BD&Apikey=7f8c864f9e4a4b2a8dc3a0f8e8656f6820240712173551219779'
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setData(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -59,6 +95,7 @@ export const CartProvider = ({ children }) => {
         handleItemAddRemove,
         isInCart,
         formatAmount,
+        products,
       }}
     >
       {children}
