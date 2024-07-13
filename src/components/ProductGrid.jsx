@@ -99,7 +99,7 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                   w="310px"
                   h={{ xl: '339px', base: '192px' }}
                   // src={product.image}
-                  src={product.photos.url}
+                  src={product.photos[0].url}
                   alt="productImg"
                   mb={{ xl: '24px', base: '10px' }}
                 />
