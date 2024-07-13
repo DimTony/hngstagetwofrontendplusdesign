@@ -108,7 +108,6 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                   justifyContent="space-between"
                   w="310px"
                   h={{ xl: '58.48px', base: '36px' }}
-                  bg="red"
                   className="hstack_child"
                   display={isInCart(product.id) ? 'none' : 'flex'}
                 >
