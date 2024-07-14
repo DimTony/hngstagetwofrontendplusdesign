@@ -8,6 +8,10 @@ export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    console.log(cartItems);
+  }, []);
+
+  useEffect(() => {
     const apiKey = import.meta.env.VITE_API_KEY;
     const appId = import.meta.env.VITE_APP_ID;
     const orgId = import.meta.env.VITE_ORG_ID;
