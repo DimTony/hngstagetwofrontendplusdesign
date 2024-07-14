@@ -93,17 +93,18 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                     display: 'flex',
                   },
                 }}
-                onClick={() => handleItemAddRemove(product)}
+                // onClick={() => handleItemAddRemove(product)}
               >
-                <Image
-                  w="310px"
-                  h={{ xl: '339px', base: '192px' }}
-                  // src={product.image}
-                  // src={product.photos[0].url}
-                  src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
-                  alt="productImg"
-                  mb={{ xl: '24px', base: '10px' }}
-                />
+                <NavLink to={`/product/${product.id}`} exact>
+                  <Image
+                    w="310px"
+                    h={{ xl: '339px', base: '192px' }}
+                    src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+                    alt="productImg"
+                    mb={{ xl: '24px', base: '10px' }}
+                    // onClick={() => handleItemAddRemove(product)}
+                  />
+                </NavLink>
                 <HStack
                   justifyContent="space-between"
                   w="310px"
@@ -194,6 +195,7 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                   alignItems="center"
                   justifyContent="center"
                   p="16px 24px 16px 24px"
+                  onClick={() => handleItemAddRemove(product)}
                 >
                   <Text
                     color={
