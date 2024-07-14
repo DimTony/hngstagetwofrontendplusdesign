@@ -48,7 +48,6 @@ const ItemCartDisplay = ({ productId }) => {
 
         setProduct(response.data);
         setProductLoading(false);
-
         // Set bigDisplayPic based on breakpoint value after data is fetched
         const picUrl = `https://api.timbu.cloud/images/${response.data.photos[0].url}`;
         const bigPic = useBreakpointValue({
@@ -67,6 +66,9 @@ const ItemCartDisplay = ({ productId }) => {
   const handleButtonClick = (index) => {
     setActiveButton(index);
   };
+  useEffect(() => {
+    console.log(product.current_price);
+  }, [product]);
 
   return (
     <>
@@ -329,8 +331,8 @@ const ItemCartDisplay = ({ productId }) => {
                       color="rgba(0, 22, 22, 1)"
                       fontFamily="Montserrat"
                     >
-                      {/* N 4,000 */}
-                      {formatAmount(product.current_price['USD'][0])}
+                      N 4,000
+                      {/* {formatAmount(product.current_price['USD'][0])} */}
                     </Text>
                   </Stack>
                 </HStack>
