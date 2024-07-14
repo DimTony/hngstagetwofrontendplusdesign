@@ -112,6 +112,14 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                   h={{ xl: '58.48px', base: '36px' }}
                   className="hstack_child"
                   display={isInCart(product.id) ? 'none' : 'flex'}
+                  _hover={{
+                    '& .hstack_child': {
+                      display: 'none',
+                    },
+                    '& .stack_child': {
+                      display: 'flex',
+                    },
+                  }}
                 >
                   <VStack alignItems="flex-start" spacing={0}>
                     <Text
