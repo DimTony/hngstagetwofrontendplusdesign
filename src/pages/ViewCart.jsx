@@ -25,7 +25,7 @@ const ViewCart = () => {
           xlTop={'Your Cart'}
           xlBottom={'Review and manage the items in your shopping cart.'}
         />
-        {id}
+
         <ItemCartDisplay productId={id} />
         <CartItemDesc />
 

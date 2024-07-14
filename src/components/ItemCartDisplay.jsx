@@ -25,7 +25,7 @@ import star from '../assets/one.png';
 import unstar from '../assets/Five.png';
 import badgeIcon from '../assets/WarnVector.png';
 
-const ItemCartDisplay = () => {
+const ItemCartDisplay = ({ productId }) => {
   const [activeButton, setActiveButton] = useState(0);
 
   const bigDisplayPic = useBreakpointValue({
@@ -97,6 +97,7 @@ const ItemCartDisplay = () => {
                   color="rgba(0,0,0,1)"
                 >
                   {color}
+                  {productId}
                 </Text>
               </VStack>
             ))}
