@@ -32,6 +32,8 @@ const ItemCartDisplay = ({ productId }) => {
   const [productLoading, setProductLoading] = useState(true);
   const [bigDisplayPic, setBigDisplayPic] = useState(null);
 
+  const { formatAmount } = useCart();
+
   useEffect(() => {
     const fetchData = async () => {
       const apiKey = import.meta.env.VITE_API_KEY;
@@ -272,7 +274,7 @@ const ItemCartDisplay = ({ productId }) => {
                 color="rgab(0, 22, 22, 1)"
                 mb="1rem"
               >
-                Cream colored totebag
+                {product.name}
               </Text>
               <HStack mb="1rem">
                 <HStack>
@@ -326,7 +328,8 @@ const ItemCartDisplay = ({ productId }) => {
                       color="rgba(0, 22, 22, 1)"
                       fontFamily="Montserrat"
                     >
-                      N 4,000
+                      {/* N 4,000 */}
+                      {formatAmount(product.current_price[0].USD[0])}
                     </Text>
                   </Stack>
                 </HStack>
