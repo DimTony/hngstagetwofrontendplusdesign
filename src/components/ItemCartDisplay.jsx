@@ -158,7 +158,6 @@ const ItemCartDisplay = ({ productId }) => {
                       color="rgba(0,0,0,1)"
                     >
                       {color}
-                      {productId}
                     </Text>
                   </VStack>
                 ))}
