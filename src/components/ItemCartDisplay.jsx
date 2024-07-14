@@ -18,46 +18,48 @@ import {
 import { AddIcon, ChevronDownIcon, MinusIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import BigDisplayItem from '../assets/card 001.png';
-import BigDisplayItemBase from '../assets/card 001.png';
-import SmallDisplayItem from '../assets/Rectangle 721.png';
-import TickIcon from '../assets/TickVector.png';
-import DeliveryIcon from '../assets/delivery.png';
-import star from '../assets/one.png';
-import unstar from '../assets/Five.png';
-import badgeIcon from '../assets/WarnVector.png';
+import BigDisplayItem from '../assets/card 001.png'; // Ensure correct import path
+import SmallDisplayItem from '../assets/Rectangle 721.png'; // Ensure correct import path
+import TickIcon from '../assets/TickVector.png'; // Ensure correct import path
+import DeliveryIcon from '../assets/delivery.png'; // Ensure correct import path
+import star from '../assets/one.png'; // Ensure correct import path
+import unstar from '../assets/Five.png'; // Ensure correct import path
+import badgeIcon from '../assets/WarnVector.png'; // Ensure correct import path
 
 const ItemCartDisplay = ({ productId }) => {
   const [activeButton, setActiveButton] = useState(0);
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [productLoading, setProductLoading] = useState(true);
+  const [bigDisplayPic, setBigDisplayPic] = useState(null);
 
   useEffect(() => {
-    const apiKey = import.meta.env.VITE_API_KEY;
-    const appId = import.meta.env.VITE_APP_ID;
-    const orgId = import.meta.env.VITE_ORG_ID;
+    const fetchData = async () => {
+      const apiKey = import.meta.env.VITE_API_KEY;
+      const appId = import.meta.env.VITE_APP_ID;
+      const orgId = import.meta.env.VITE_ORG_ID;
 
-    const fetchProduct = async () => {
       try {
         const response = await axios.get(
           `https://timbu-get-single-product.reavdev.workers.dev/${productId}?organization_id=${orgId}&Appid=${appId}&Apikey=${apiKey}`
         );
-        setProductLoading(false);
+
         setProduct(response.data);
+        setProductLoading(false);
+
+        // Set bigDisplayPic based on breakpoint value after data is fetched
+        const picUrl = `https://api.timbu.cloud/images/${response.data.photos[0].url}`;
+        const bigPic = useBreakpointValue({
+          xl: picUrl,
+          base: picUrl,
+        });
+        setBigDisplayPic(bigPic);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error('Error fetching product:', error);
       }
     };
 
-    fetchProduct();
+    fetchData();
   }, [productId]);
-
-  if (!productLoading) {
-    const bigDisplayPic = useBreakpointValue({
-      xl: `https://api.timbu.cloud/images/${product.photos[0].url}`,
-      base: `https://api.timbu.cloud/images/${product.photos[0].url}`,
-    });
-  }
 
   const handleButtonClick = (index) => {
     setActiveButton(index);
