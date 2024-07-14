@@ -16,7 +16,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { AddIcon, ChevronDownIcon, MinusIcon } from '@chakra-ui/icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BigDisplayItem from '../assets/card 001.png';
 import BigDisplayItemBase from '../assets/card 001.png';
 import SmallDisplayItem from '../assets/Rectangle 721.png';
