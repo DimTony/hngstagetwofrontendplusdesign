@@ -330,7 +330,7 @@ const ItemCartDisplay = ({ productId }) => {
                       fontFamily="Montserrat"
                     >
                       {/* N 4,000 */}
-                      {formatAmount(product.current_price[0]['USD'][0])}
+                      {formatAmount(product.current_price['USD'][0])}
                     </Text>
                   </Stack>
                 </HStack>
