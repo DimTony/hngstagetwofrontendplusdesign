@@ -8,6 +8,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Skeleton,
   Stack,
   StackDivider,
   Text,
@@ -27,13 +28,35 @@ import badgeIcon from '../assets/WarnVector.png';
 
 const ItemCartDisplay = ({ productId }) => {
   const [activeButton, setActiveButton] = useState(0);
+  const [product, setProduct] = useState([]);
+  const [productLoading, setProductLoading] = useState(true);
 
-  const bigDisplayPic = useBreakpointValue({
-    xl: BigDisplayItem,
-    lg: BigDisplayItem,
-    md: BigDisplayItem,
-    base: BigDisplayItemBase,
-  });
+  useEffect(() => {
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const appId = import.meta.env.VITE_APP_ID;
+    const orgId = import.meta.env.VITE_ORG_ID;
+
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(
+          `https://timbu-get-single-product.reavdev.workers.dev/${productId}?organization_id=${orgId}&Appid=${appId}&Apikey=${apiKey}`
+        );
+        setProductLoading(false);
+        setProduct(response.data.items);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProduct();
+  }, [productId]);
+
+  if (!productLoading) {
+    const bigDisplayPic = useBreakpointValue({
+      xl: `https://api.timbu.cloud/images/${product.photos[0].url}`,
+      base: `https://api.timbu.cloud/images/${product.photos[0].url}`,
+    });
+  }
 
   const handleButtonClick = (index) => {
     setActiveButton(index);
@@ -62,13 +85,21 @@ const ItemCartDisplay = ({ productId }) => {
             }}
             mb="2rem"
           >
-            <Image
-              src={bigDisplayPic}
-              alt="bigpic"
-              w={{ xl: '100%', lg: '644px', md: '644px', base: '335px' }}
-              h={{ xl: 'auto', lg: '560px', md: '560px', base: '367px' }}
-              border="0.5px solid rgba(223, 221, 220, 1)"
-            />
+            {productLoading ? (
+              <Skeleton
+                w={{ xl: '100%', lg: '644px', md: '644px', base: '335px' }}
+                h={{ xl: 'auto', lg: '560px', md: '560px', base: '367px' }}
+                border="0.5px solid rgba(223, 221, 220, 1)"
+              />
+            ) : (
+              <Image
+                src={bigDisplayPic}
+                alt="bigpic"
+                w={{ xl: '100%', lg: '644px', md: '644px', base: '335px' }}
+                h={{ xl: 'auto', lg: '560px', md: '560px', base: '367px' }}
+                border="0.5px solid rgba(223, 221, 220, 1)"
+              />
+            )}
           </Stack>
           <HStack
             w={{ xl: '70%' }}
