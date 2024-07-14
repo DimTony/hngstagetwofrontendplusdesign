@@ -11,6 +11,7 @@ import {
 // import { products } from '../assets/products';
 import React from 'react';
 import { useCart } from '../contexts/CartContext';
+import { NavLink } from 'react-router-dom';
 
 const ProductGrid = ({ start, end, formatAmount }) => {
   const { cartItems, products, handleItemAddRemove } = useCart();
