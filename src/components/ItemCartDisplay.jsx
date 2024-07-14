@@ -18,6 +18,7 @@ import {
 import { AddIcon, ChevronDownIcon, MinusIcon } from '@chakra-ui/icons';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useCart } from '../contexts/CartContext';
 import BigDisplayItem from '../assets/card 001.png'; // Ensure correct import path
 import SmallDisplayItem from '../assets/Rectangle 721.png'; // Ensure correct import path
 import TickIcon from '../assets/TickVector.png'; // Ensure correct import path
