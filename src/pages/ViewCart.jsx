@@ -10,9 +10,13 @@ import { useCart } from '../contexts/CartContext';
 import Footer from '../components/Footer';
 import BaseFooter from '../components/BaseFooter';
 import mobileFlex1 from '../assets/view port.png';
+import { useParams } from 'react-router-dom';
 
 const ViewCart = () => {
   const { handleItemAddRemove, isInCart, formatAmount } = useCart();
+
+  const { id } = useParams();
+
   return (
     <>
       <VStack px={{ xl: '64px', base: '24px' }}>
@@ -21,7 +25,8 @@ const ViewCart = () => {
           xlTop={'Your Cart'}
           xlBottom={'Review and manage the items in your shopping cart.'}
         />
-        <ItemCartDisplay />
+        {id}
+        <ItemCartDisplay productId={id} />
         <CartItemDesc />
 
         <CustomerReview />
