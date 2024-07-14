@@ -123,7 +123,7 @@ const ItemCartDisplay = ({ productId }) => {
                 {['WHITE', 'BLACK', 'GREY'].map((color) => (
                   <VStack key={color}>
                     <Image
-                      src={SmallDisplayItem}
+                      src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
                       alt="smallpic"
                       w={{
                         xl: '255.46px',
