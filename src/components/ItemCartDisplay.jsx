@@ -43,7 +43,7 @@ const ItemCartDisplay = ({ productId }) => {
           `https://timbu-get-single-product.reavdev.workers.dev/${productId}?organization_id=${orgId}&Appid=${appId}&Apikey=${apiKey}`
         );
         setProductLoading(false);
-        setProduct(response.data.items);
+        setProduct(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
       }
