@@ -373,15 +373,15 @@ const ItemCartDisplay = ({
                       onClick={incrementValue}
                       cursor="pointer"
                     />
-                    <Stack
+                    {/* <Stack
                       justifyContent="center"
                       alignItems="center"
                       borderRadius="6px"
                       border="1.37px solid rgba(223, 221, 220, 1)"
                       bg="rgba(255, 255, 255, 1)"
                       p="6px 15px 6px 15px"
-                    >
-                      {/* <Text
+                    > */}
+                    {/* <Text
                         fontFamily="Ubuntu"
                         fontWeight="500"
                         fontSize="18px"
@@ -391,20 +391,26 @@ const ItemCartDisplay = ({
                       >
                         {value}
                       </Text> */}
-                      <Input
-                        type="number"
-                        value={value}
-                        onChange={handleChange}
-                        min={1}
-                        w="40px"
-                        textAlign="center"
-                        fontSize="18px"
-                        fontWeight="500"
-                        lineHeight="28.8px"
-                        letterSpacing="-0.01em"
-                        color="rgba(107, 111, 107, 1)"
-                      />
-                    </Stack>
+                    <Input
+                      type="number"
+                      value={value}
+                      onChange={handleChange}
+                      min={1}
+                      w="40px"
+                      textAlign="center"
+                      fontSize="18px"
+                      fontWeight="500"
+                      lineHeight="28.8px"
+                      letterSpacing="-0.01em"
+                      color="rgba(107, 111, 107, 1)"
+                      justifyContent="center"
+                      alignItems="center"
+                      borderRadius="6px"
+                      border="1.37px solid rgba(223, 221, 220, 1)"
+                      bg="rgba(255, 255, 255, 1)"
+                      p="6px 15px 6px 15px"
+                    />
+                    {/* </Stack> */}
                     <MinusIcon
                       w="22px"
                       h="22px"
