@@ -36,27 +36,24 @@ const ItemCartDisplay = ({
   setProductLoading,
 }) => {
   const [activeButton, setActiveButton] = useState(0);
-  const [value, setValue] = useState('1');
+  const [value, setValue] = useState(1);
 
   const { formatAmount } = useCart();
 
   const handleChange = (event) => {
-    const newValue = event.target.value;
-    if (!isNaN(newValue) && parseInt(newValue, 10) >= 1) {
-      setValue(newValue); // Update state with valid numeric string
+    const newValue = parseInt(event.target.value, 10);
+    if (!isNaN(newValue) && newValue >= 1) {
+      setValue(newValue);
     }
   };
 
   const incrementValue = () => {
-    const newValue = parseInt(value, 10) + 1;
-    setValue(String(newValue)); // Ensure value is a string after increment
+    setValue((prevValue) => prevValue + 1);
   };
 
   const decrementValue = () => {
-    const currentValue = parseInt(value, 10);
-    if (currentValue > 1) {
-      const newValue = currentValue - 1;
-      setValue(String(newValue)); // Ensure value is a string after decrement
+    if (value > 1) {
+      setValue((prevValue) => prevValue - 1);
     }
   };
 
