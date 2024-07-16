@@ -187,7 +187,8 @@ const ProductGrid = ({ start, end, formatAmount }) => {
                     }}
                   >
                     {/* {formatAmount(product.amount)} */}
-                    {formatAmount(product.current_price[0].USD[0])}
+                    {/* {formatAmount(product.current_price[0].USD[0])} */}
+                    {formatAmount(product.current_price[0].NGN[0])}
                     {/* {product.current_price[0].USD[0]} */}
                   </Text>
                 </HStack>

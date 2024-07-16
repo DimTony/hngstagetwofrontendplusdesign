@@ -331,8 +331,8 @@ const ItemCartDisplay = ({ productId }) => {
                       color="rgba(0, 22, 22, 1)"
                       fontFamily="Montserrat"
                     >
-                      N 4,000
-                      {/* {formatAmount(product.current_price['USD'][0])} */}
+                      {/* N 4,000 */}
+                      {formatAmount(product.current_price)}
                     </Text>
                   </Stack>
                 </HStack>
