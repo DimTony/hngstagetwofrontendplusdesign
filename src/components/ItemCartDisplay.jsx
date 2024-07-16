@@ -36,24 +36,24 @@ const ItemCartDisplay = ({
   setProductLoading,
 }) => {
   const [activeButton, setActiveButton] = useState(0);
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState('1');
 
   const { formatAmount } = useCart();
 
   const handleChange = (event) => {
-    const newValue = parseInt(event.target.value, 10);
-    if (!isNaN(newValue) && newValue >= 1) {
+    const newValue = event.target.value;
+    if (!isNaN(newValue) && parseInt(newValue, 10) >= 1) {
       setValue(newValue);
     }
   };
 
   const incrementValue = () => {
-    setValue((prevValue) => prevValue + 1);
+    setValue((prevValue) => String(parseInt(prevValue, 10) + 1));
   };
 
   const decrementValue = () => {
-    if (value > 1) {
-      setValue((prevValue) => prevValue - 1);
+    if (parseInt(value, 10) > 1) {
+      setValue((prevValue) => String(parseInt(prevValue, 10) - 1));
     }
   };
 
@@ -63,7 +63,7 @@ const ItemCartDisplay = ({
 
   return (
     <>
-      {productLoading ? (
+      {!productLoading ? (
         <HStack w="100%" h="779.53px" gap="24px" mb="1rem">
           <VStack
             w={{ xl: '50%', lg: '50%', md: '50%', base: '100%' }}
@@ -601,6 +601,7 @@ const ItemCartDisplay = ({
                       lineHeight="28.8px"
                       letterSpacing="-0.01em"
                       color="rgba(107, 111, 107, 1)"
+                      readOnly={false} // Ensure the input is not read-only
                     />
                   </Stack>
                   <MinusIcon w="22px" h="22px" />
