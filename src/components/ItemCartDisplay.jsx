@@ -39,6 +39,13 @@ const ItemCartDisplay = ({
 
   const { formatAmount } = useCart();
 
+  const handleChange = (event) => {
+    const newValue = parseInt(event.target.value, 10);
+    if (!isNaN(newValue) && newValue >= 1) {
+      setValue(newValue);
+    }
+  };
+
   const incrementValue = () => {
     setValue((prevValue) => prevValue + 1);
   };
@@ -571,7 +578,7 @@ const ItemCartDisplay = ({
                     bg="rgba(255, 255, 255, 1)"
                     p="6px 15px 6px 15px"
                   >
-                    <Text
+                    {/* <Text
                       fontFamily="Ubuntu"
                       fontWeight="500"
                       fontSize="18px"
@@ -580,7 +587,20 @@ const ItemCartDisplay = ({
                       color="rgba(107, 111, 107, 1)"
                     >
                       1
-                    </Text>
+                    </Text> */}
+                    <Input
+                      type="number"
+                      value={value}
+                      onChange={handleChange}
+                      min={1}
+                      w="40px"
+                      textAlign="center"
+                      fontSize="18px"
+                      fontWeight="500"
+                      lineHeight="28.8px"
+                      letterSpacing="-0.01em"
+                      color="rgba(107, 111, 107, 1)"
+                    />
                   </Stack>
                   <MinusIcon w="22px" h="22px" />
                 </HStack>
