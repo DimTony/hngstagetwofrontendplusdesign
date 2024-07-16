@@ -35,8 +35,19 @@ const ItemCartDisplay = ({
   setProductLoading,
 }) => {
   const [activeButton, setActiveButton] = useState(0);
+  const [value, setValue] = useState(1);
 
   const { formatAmount } = useCart();
+
+  const incrementValue = () => {
+    setValue((prevValue) => prevValue + 1);
+  };
+
+  const decrementValue = () => {
+    if (value > 1) {
+      setValue((prevValue) => prevValue - 1);
+    }
+  };
 
   const handleButtonClick = (index) => {
     setActiveButton(index);
@@ -365,7 +376,7 @@ const ItemCartDisplay = ({
                         letterSpacing="-0.01em"
                         color="rgba(107, 111, 107, 1)"
                       >
-                        1
+                        {value}
                       </Text>
                     </Stack>
                     <MinusIcon w="22px" h="22px" />
