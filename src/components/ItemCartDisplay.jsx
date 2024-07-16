@@ -359,7 +359,12 @@ const ItemCartDisplay = ({
                     Quantity:
                   </Text>
                   <HStack>
-                    <AddIcon w="20px" h="20px" />
+                    <AddIcon
+                      w="20px"
+                      h="20px"
+                      onClick={incrementValue}
+                      cursor="pointer"
+                    />
                     <Stack
                       justifyContent="center"
                       alignItems="center"
@@ -379,7 +384,12 @@ const ItemCartDisplay = ({
                         {value}
                       </Text>
                     </Stack>
-                    <MinusIcon w="22px" h="22px" />
+                    <MinusIcon
+                      w="22px"
+                      h="22px"
+                      onClick={decrementValue}
+                      cursor="pointer"
+                    />
                   </HStack>
                 </HStack>
               </HStack>
