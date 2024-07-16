@@ -43,17 +43,20 @@ const ItemCartDisplay = ({
   const handleChange = (event) => {
     const newValue = event.target.value;
     if (!isNaN(newValue) && parseInt(newValue, 10) >= 1) {
-      setValue(newValue);
+      setValue(newValue); // Update state with valid numeric string
     }
   };
 
   const incrementValue = () => {
-    setValue((prevValue) => String(parseInt(prevValue, 10) + 1));
+    const newValue = parseInt(value, 10) + 1;
+    setValue(String(newValue)); // Ensure value is a string after increment
   };
 
   const decrementValue = () => {
-    if (parseInt(value, 10) > 1) {
-      setValue((prevValue) => String(parseInt(prevValue, 10) - 1));
+    const currentValue = parseInt(value, 10);
+    if (currentValue > 1) {
+      const newValue = currentValue - 1;
+      setValue(String(newValue)); // Ensure value is a string after decrement
     }
   };
 
@@ -381,16 +384,19 @@ const ItemCartDisplay = ({
                       bg="rgba(255, 255, 255, 1)"
                       p="6px 15px 6px 15px"
                     >
-                      <Text
-                        fontFamily="Ubuntu"
-                        fontWeight="500"
+                      <Input
+                        type="number"
+                        value={value}
+                        onChange={handleChange}
+                        min={1}
+                        w="40px"
+                        textAlign="center"
                         fontSize="18px"
+                        fontWeight="500"
                         lineHeight="28.8px"
                         letterSpacing="-0.01em"
                         color="rgba(107, 111, 107, 1)"
-                      >
-                        {value}
-                      </Text>
+                      />
                     </Stack>
                     <MinusIcon
                       w="22px"
