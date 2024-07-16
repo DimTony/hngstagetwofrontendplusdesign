@@ -601,7 +601,6 @@ const ItemCartDisplay = ({
                       lineHeight="28.8px"
                       letterSpacing="-0.01em"
                       color="rgba(107, 111, 107, 1)"
-                      readOnly={false} // Ensure the input is not read-only
                     />
                   </Stack>
                   <MinusIcon w="22px" h="22px" />
