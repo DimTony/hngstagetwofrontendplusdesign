@@ -36,7 +36,7 @@ const ItemCartDisplay = ({
   setProductLoading,
 }) => {
   const [activeButton, setActiveButton] = useState(0);
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState('1');
 
   const { formatAmount } = useCart();
 
