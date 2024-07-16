@@ -372,7 +372,7 @@ const ItemCartDisplay = ({
                   </HStack>
                 </HStack>
               </HStack>
-              <Box w="645px" h="51px" mb="2rem" bg="red">
+              <Box w="645px" h="51px" mb="2rem">
                 <Text
                   fontSize="18px"
                   fontWeight="400"

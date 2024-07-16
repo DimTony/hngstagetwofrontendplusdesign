@@ -50,13 +50,6 @@ const ViewCart = () => {
     fetchData();
   }, [id]);
 
-  // useEffect(() => {
-  //   fetch('/api') // Make a request to the proxy path
-  //     .then((response) => response.json())
-  //     .then((data) => setProduct(data))
-  //     .catch((error) => console.error('Error fetching data:', error));
-  // }, []);
-
   return (
     <>
       <VStack px={{ xl: '64px', base: '24px' }}>
