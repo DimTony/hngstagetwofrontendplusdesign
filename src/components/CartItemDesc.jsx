@@ -1,7 +1,7 @@
-import { Text, useBreakpointValue, VStack } from '@chakra-ui/react';
+import { Skeleton, Text, useBreakpointValue, VStack } from '@chakra-ui/react';
 import React from 'react';
 
-const CartItemDesc = () => {
+const CartItemDesc = ({ productLoading }) => {
   const descText = useBreakpointValue({
     xl: `The Cream-Colored Totebag is a blend of elegance and functionality.
           Crafted from luxurious fabric, its spacious interior accommodates
@@ -57,20 +57,35 @@ const CartItemDesc = () => {
         >
           Description
         </Text>
-        <Text
-          fontSize={{ xl: '20px', lg: '16px', md: '12px', base: '10px' }}
-          fontWeight="400"
-          lineHeight={{ xl: '31.2px', lg: '24px', md: '18px', base: '15.6px' }}
-          color={{
-            xl: 'rgba(78, 80, 80, 1)',
-            lg: 'rgba(78, 80, 80, 1)',
-            md: 'rgba(78, 80, 80, 1)',
-            base: 'rgba(112, 115, 115, 1)',
-          }}
-          fontFamily="Montserrat"
-        >
-          {descText}
-        </Text>
+        {productLoading ? (
+          <VStack h="20vh" w="100%" alignItems="flex-end">
+            <Skeleton w="90%" h="20%" borderRadius="10px" />
+            <Skeleton w="100%" h="20%" borderRadius="10px" />
+            <Skeleton w="100%" h="20%" borderRadius="10px" />
+            <Skeleton w="100%" h="20%" borderRadius="10px" />
+            <Skeleton w="100%" h="20%" borderRadius="10px" />
+          </VStack>
+        ) : (
+          <Text
+            fontSize={{ xl: '20px', lg: '16px', md: '12px', base: '10px' }}
+            fontWeight="400"
+            lineHeight={{
+              xl: '31.2px',
+              lg: '24px',
+              md: '18px',
+              base: '15.6px',
+            }}
+            color={{
+              xl: 'rgba(78, 80, 80, 1)',
+              lg: 'rgba(78, 80, 80, 1)',
+              md: 'rgba(78, 80, 80, 1)',
+              base: 'rgba(112, 115, 115, 1)',
+            }}
+            fontFamily="Montserrat"
+          >
+            {descText}
+          </Text>
+        )}
       </VStack>
     </>
   );

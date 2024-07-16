@@ -22,7 +22,8 @@ const Navbar = () => {
           gap="24px"
           display={{ base: 'none', xl: 'flex' }}
         >
-          <NavLink to="/thetotebagshop" exact>
+          {/* <NavLink to="/thetotebagshop" exact> */}
+          <NavLink to="/" exact>
             {({ isActive }) => (
               <Box position="relative">
                 <Text fontWeight="400" fontSize={{ md: '14px', lg: '18px' }}>

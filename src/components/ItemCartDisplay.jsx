@@ -27,61 +27,57 @@ import star from '../assets/one.png'; // Ensure correct import path
 import unstar from '../assets/Five.png'; // Ensure correct import path
 import badgeIcon from '../assets/WarnVector.png'; // Ensure correct import path
 
-const ItemCartDisplay = ({ productId }) => {
+const ItemCartDisplay = ({
+  productId,
+  product,
+  bigDisplayPic,
+  productLoading,
+  setProductLoading,
+}) => {
   const [activeButton, setActiveButton] = useState(0);
-  const [product, setProduct] = useState({});
-  const [productLoading, setProductLoading] = useState(true);
-  const [bigDisplayPic, setBigDisplayPic] = useState(null);
 
   const { formatAmount } = useCart();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const apiKey = import.meta.env.VITE_API_KEY;
-      const appId = import.meta.env.VITE_APP_ID;
-      const orgId = import.meta.env.VITE_ORG_ID;
-
-      try {
-        const response = await axios.get(
-          `https://timbu-get-single-product.reavdev.workers.dev/${productId}?organization_id=${orgId}&Appid=${appId}&Apikey=${apiKey}`
-        );
-
-        setProduct(response.data);
-        setProductLoading(false);
-        // Set bigDisplayPic based on breakpoint value after data is fetched
-        const picUrl = `https://api.timbu.cloud/images/${response.data.photos[0].url}`;
-        const bigPic = useBreakpointValue({
-          xl: picUrl,
-          base: picUrl,
-        });
-        setBigDisplayPic(bigPic);
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
-    };
-
-    fetchData();
-  }, [productId]);
 
   const handleButtonClick = (index) => {
     setActiveButton(index);
   };
-  useEffect(() => {
-    console.log(product.current_price);
-  }, [product]);
 
   return (
     <>
       {productLoading ? (
-        <Stack
-          p="10rem"
-          justifyContent="center"
-          alignItems="center"
-          w="100dvw"
-          h="100dvh"
-        >
-          <Skeleton w="100%" h="100%" />
-        </Stack>
+        <HStack w="100%" h="779.53px" gap="24px" mb="1rem">
+          <VStack
+            w={{ xl: '50%', lg: '50%', md: '50%', base: '100%' }}
+            h="100%"
+          >
+            <Skeleton w="100%" h="65%" borderRadius="10px" />
+            <HStack h="25%" gap="24px">
+              <Skeleton w="150px" h="197px" borderRadius="10px" />
+              <Skeleton w="150px" h="197px" borderRadius="10px" />
+              <Skeleton w="150px" h="197px" borderRadius="10px" />
+            </HStack>
+            <VStack w="100%" h="10%">
+              <Skeleton w="497px" h="47px" borderRadius="10px" />
+              <Skeleton w="497px" h="27px" borderRadius="10px" />
+            </VStack>
+          </VStack>
+          <VStack
+            py="4rem"
+            w={{ xl: '50%', lg: '50%', md: '50%', base: '0%' }}
+            h="100%"
+            alignItems="flex-start"
+          >
+            <Skeleton w="20%" h="3%" borderRadius="10px" />
+            <Skeleton w="40%" h="7%" borderRadius="10px" />
+            <Skeleton w="50%" h="7%" borderRadius="10px" />
+            <Skeleton w="40%" h="7%" borderRadius="10px" />
+            <Skeleton w="50%" h="7%" borderRadius="10px" />
+            <Skeleton w="100%" h="20%" borderRadius="10px" mb="2rem" />
+            <Skeleton w="60%" h="20%" borderRadius="10px" />
+            <Skeleton w="60%" h="20%" borderRadius="10px" mb="2rem" />
+            <Skeleton w="70%" h="20%" borderRadius="10px" />
+          </VStack>
+        </HStack>
       ) : (
         <>
           <HStack w="100%" gap="24px" mb="1rem">
@@ -376,7 +372,7 @@ const ItemCartDisplay = ({ productId }) => {
                   </HStack>
                 </HStack>
               </HStack>
-              <Box w="645px" h="51px" mb="2rem">
+              <Box w="645px" h="51px" mb="2rem" bg="red">
                 <Text
                   fontSize="18px"
                   fontWeight="400"
