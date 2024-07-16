@@ -1,5 +1,6 @@
 import { Box, Image, VStack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import { TextTemplate } from '../components/TextTemplate';
 import ItemCartDisplay from '../components/ItemCartDisplay';
@@ -37,7 +38,7 @@ const ViewCart = () => {
         // Set bigDisplayPic based on breakpoint value after data is fetched
         const picUrl = `https://api.timbu.cloud/images/${response.data.photos[0].url}`;
         const bigPic = useBreakpointValue({
-          xl: picUrl,
+          xl: picUrl1,
           base: picUrl,
         });
         setBigDisplayPic(bigPic);
@@ -48,6 +49,13 @@ const ViewCart = () => {
 
     fetchData();
   }, [id]);
+
+  // useEffect(() => {
+  //   fetch('/api') // Make a request to the proxy path
+  //     .then((response) => response.json())
+  //     .then((data) => setProduct(data))
+  //     .catch((error) => console.error('Error fetching data:', error));
+  // }, []);
 
   return (
     <>
