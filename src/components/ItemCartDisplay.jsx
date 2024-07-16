@@ -41,19 +41,22 @@ const ItemCartDisplay = ({
   const { formatAmount } = useCart();
 
   const handleChange = (event) => {
-    const newValue = parseInt(event.target.value, 10);
-    if (!isNaN(newValue) && newValue >= 1) {
-      setValue(newValue);
+    const newValue = event.target.value;
+    if (!isNaN(newValue) && parseInt(newValue, 10) >= 1) {
+      setValue(newValue); // Update state with valid numeric string
     }
   };
 
   const incrementValue = () => {
-    setValue((prevValue) => prevValue + 1);
+    const newValue = parseInt(value, 10) + 1;
+    setValue(String(newValue)); // Ensure value is a string after increment
   };
 
   const decrementValue = () => {
-    if (value > 1) {
-      setValue((prevValue) => prevValue - 1);
+    const currentValue = parseInt(value, 10);
+    if (currentValue > 1) {
+      const newValue = currentValue - 1;
+      setValue(String(newValue)); // Ensure value is a string after decrement
     }
   };
 
